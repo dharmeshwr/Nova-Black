@@ -1,0 +1,175 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Graphik LCG';
+  src: url('/fonts/GraphikLCG-Thin.woff2') format('woff2'),
+       url('/fonts/GraphikLCG-Thin.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Graphik LCG';
+  src: url('/fonts/GraphikLCG-ThinItalic.woff2') format('woff2'),
+       url('/fonts/GraphikLCG-ThinItalic.woff') format('woff');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Graphik LCG';
+  src: url('/fonts/GraphikLCG-Extralight.woff2') format('woff2'),
+       url('/fonts/GraphikLCG-Extralight.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Graphik LCG';
+  src: url('/fonts/GraphikLCG-ExtralightItalic.woff2') format('woff2'),
+       url('/fonts/GraphikLCG-ExtralightItalic.woff') format('woff');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Graphik LCG';
+  src: url('/fonts/GraphikLCG-Light.woff2') format('woff2'),
+       url('/fonts/GraphikLCG-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Graphik LCG';
+  src: url('/fonts/GraphikLCG-LightItalic.woff2') format('woff2'),
+       url('/fonts/GraphikLCG-LightItalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Graphik LCG';
+  src: url('/fonts/GraphikLCG-Regular.woff2') format('woff2'),
+       url('/fonts/GraphikLCG-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Graphik LCG';
+  src: url('/fonts/GraphikLCG-RegularItalic.woff2') format('woff2'),
+       url('/fonts/GraphikLCG-RegularItalic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Graphik LCG';
+  src: url('/fonts/GraphikLCG-Medium.woff2') format('woff2'),
+       url('/fonts/GraphikLCG-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Graphik LCG';
+  src: url('/fonts/GraphikLCG-MediumItalic.woff2') format('woff2'),
+       url('/fonts/GraphikLCG-MediumItalic.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Graphik LCG';
+  src: url('/fonts/GraphikLCG-Semibold.woff2') format('woff2'),
+       url('/fonts/GraphikLCG-Semibold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Graphik LCG';
+  src: url('/fonts/GraphikLCG-SemiboldItalic.woff2') format('woff2'),
+       url('/fonts/GraphikLCG-SemiboldItalic.woff') format('woff');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Graphik LCG';
+  src: url('/fonts/GraphikLCG-Bold.woff2') format('woff2'),
+       url('/fonts/GraphikLCG-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Graphik LCG';
+  src: url('/fonts/GraphikLCG-BoldItalic.woff2') format('woff2'),
+       url('/fonts/GraphikLCG-BoldItalic.woff') format('woff');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Graphik LCG';
+  src: url('/fonts/GraphikLCG-Black.woff2') format('woff2'),
+       url('/fonts/GraphikLCG-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Graphik LCG';
+  src: url('/fonts/GraphikLCG-BlackItalic.woff2') format('woff2'),
+       url('/fonts/GraphikLCG-BlackItalic.woff') format('woff');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: 'Graphik LCG', sans-serif;
+  --font-mono: var(--font-geist-mono);
+}
+
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Graphik LCG', sans-serif;
+}
+
+.scrollbar {
+  scrollbar-color: rgba(255, 255, 255, 0.5) transparent;
+  scrollbar-width: thin;
+}
+
+.scrollbar::-moz-scrollbar-button {
+  display: none;
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+}
+
+/* ::selection { */
+/*   background: rgba(0, 0, 0, 0.1); */
+/* } */
