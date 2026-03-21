@@ -1,5 +1,6 @@
 "use client";
 
+import React from 'react';
 import {
   ArrowRightIcon,
   DeviceMobileIcon,
@@ -14,7 +15,8 @@ import {
   InstagramLogoIcon,
   LinkedinLogoIcon,
   CodeIcon,
-  WarningIcon
+  WarningIcon,
+  Icon
 } from '@phosphor-icons/react';
 import { Easing, motion, Variants } from 'motion/react';
 
@@ -49,7 +51,7 @@ const fadeVariants: Variants = {
 };
 
 export default function ServicesDark() {
-  const services = [
+  const services: { title: string; description: string; icon: Icon; subtext: string; isCompliance?: boolean; warningText?: string }[] = [
     {
       title: "Software Development",
       description: "End-to-end engineering of robust software ecosystems. We translate complex business requirements into high-performance, scalable custom solutions using modern agile methodologies.",

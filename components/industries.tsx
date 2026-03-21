@@ -82,7 +82,7 @@ export default function IndustriesDirectory() {
   const [activeId, setActiveId] = useState(industries[0].id);
 
   // Find the active industry object to render the dynamic left panel
-  const activeIndustry = industries.find((item) => item.id === activeId);
+  const activeIndustry = industries.find((item) => item.id === activeId) ?? industries[0];
   const ActiveIcon = activeIndustry.icon;
 
   return (
