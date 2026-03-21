@@ -18,7 +18,7 @@ export default function HeroSection() {
         >
           <div className='tracking-tighter text-5xl md:text-6xl xl:text-7xl 2xl:text-8xl max-md:text-center pt-10'>
             <Balancer>
-              <span className='whitespace-nowrap'>
+              <span className='md:whitespace-nowrap'>
                 Design. Development.
               </span>
               <br />
@@ -26,22 +26,23 @@ export default function HeroSection() {
             </Balancer>
           </div>
 
-          <motion.button
+          <motion.a
+            href="/contact"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.5 }}
-            className="text-lg w-fit pl-2 cursor-pointer hover:text-foreground transition-colors inline-flex justify-center items-center gap-2"
+            className="text-lg w-fit pl-2 cursor-pointer hover:text-foreground transition-colors inline-flex justify-center items-center gap-2 max-md:mx-auto"
           >
             <span> Book a call </span>
             <ArrowRightIcon size={17} />
-          </motion.button>
+          </motion.a>
         </motion.p>
 
         <motion.p
           initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
-          className="max-md:text-center w-full xl:w-1/3 mt-auto text-lg mb-24"
+          className="max-md:text-center w-full xl:w-1/3 mt-auto max-md:mt-8 text-lg mb-24 max-md:mb-10"
         >
           We design and develop exceptional digital products & services, eCommerce, and brand communication solutions.
         </motion.p>
