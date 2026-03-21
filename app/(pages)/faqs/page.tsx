@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { PlusIcon, QuestionIcon, ArrowRightIcon, MinusIcon, CaretDownIcon } from "@phosphor-icons/react";
+import { QuestionIcon, ArrowRightIcon, CaretDownIcon } from "@phosphor-icons/react";
 import { motion, AnimatePresence } from "motion/react";
 import { cn } from "@/lib/utils";
 
@@ -52,106 +52,126 @@ export default function FAQ() {
   ];
 
   return (
-    <section className="min-h-screen bg-background text-foreground font-sans pt-32 pb-24 selection:bg-neutral-200">
-      <div className="max-w-4xl mx-auto px-6 md:px-10">
+    <section className="min-h-screen bg-zinc-950 text-zinc-50 font-sans py-24 md:py-32 selection:bg-zinc-800 selection:text-zinc-50">
+      <div className="max-w-5xl mx-auto px-6 md:px-12">
 
-        {/* HEADER */}
-        <div className="text-center mb-20">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-100 mb-6">
-              <QuestionIcon weight="fill" className="text-neutral-400" />
-              <span className="text-xs font-bold uppercase tracking-widest text-neutral-500">Knowledge Base</span>
-            </div>
+        {/* Header Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="mb-24 md:mb-32 border-b border-zinc-800 pb-16"
+        >
+          <div className="flex items-center gap-3 text-zinc-400 mb-8">
+            <QuestionIcon size={24} />
+            <span className="uppercase tracking-widest text-sm">Knowledge Base</span>
+          </div>
 
-            <h1 className="text-5xl md:text-7xl font-light tracking-tight mb-6">
-              Common <span className="font-serif italic text-neutral-400">Queries.</span>
-            </h1>
-          </motion.div>
-        </div>
+          <h1 className="text-4xl md:text-6xl tracking-tight text-zinc-50 mb-6">
+            Common Queries
+          </h1>
 
-        {/* ACCORDION CONTAINER */}
-        <div className="flex flex-col gap-4">
+          <p className="max-w-2xl text-xl text-zinc-400 leading-relaxed">
+            Clear answers regarding our processes, timelines, and technical capabilities.
+          </p>
+        </motion.div>
+
+        {/* FAQ Split-Row Layout */}
+        <div className="flex flex-col">
           {faqData.map((item, index) => {
             const isOpen = openIndex === index;
 
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className={cn(
-                  "group rounded-3xl transition-all duration-500 overflow-hidden border",
-                  isOpen
-                    ? "bg-neutral-50 border-neutral-200 shadow-sm"
-                    : "bg-white border-transparent hover:bg-neutral-50/50"
-                )}
+                viewport={{ once: true, margin: "-10%" }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+                className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 py-10 border-b border-zinc-900 group"
               >
-                <button
-                  onClick={() => toggleFAQ(index)}
-                  className="w-full flex items-center justify-between p-6 md:p-8 text-left cursor-pointer outline-none"
-                >
-                  <div className="flex items-center gap-6">
-                    <span className={cn(
-                      "text-xs font-mono font-bold px-2 py-1 rounded transition-colors",
-                      isOpen ? "bg-neutral-900 text-white" : "bg-neutral-100 text-neutral-400"
+
+                {/* Left Column: Number and Category */}
+                <div className="md:col-span-4 flex flex-col gap-2">
+                  <span className="font-mono text-zinc-600 text-sm">
+                    /{item.id}
+                  </span>
+                  <span className="text-zinc-500 uppercase tracking-widest text-xs mt-2 hidden md:block">
+                    {item.category}
+                  </span>
+                </div>
+
+                {/* Right Column: Question and Answer */}
+                <div className="md:col-span-8">
+                  <button
+                    onClick={() => toggleFAQ(index)}
+                    className="w-full flex items-start justify-between text-left cursor-pointer outline-none group-hover:text-zinc-300 transition-colors duration-300"
+                  >
+                    <h2 className={cn(
+                      "text-2xl pr-8 transition-colors duration-300",
+                      isOpen ? "text-zinc-50" : "text-zinc-300"
                     )}>
-                      {item.id}
-                    </span>
-                    <span className="text-xl md:text-2xl font-medium tracking-tight pr-4">
                       {item.question}
-                    </span>
-                  </div>
+                    </h2>
 
-                  <div className={cn(
-                    "w-10 h-10 rounded-full flex items-center justify-center border transition-all duration-300 shrink-0",
-                    isOpen ? "bg-neutral-900 border-neutral-900 text-white rotate-180" : "bg-white border-neutral-200 text-neutral-400 group-hover:border-neutral-300"
-                  )}>
-                    <CaretDownIcon size={20} weight="bold" />
-                  </div>
-                </button>
+                    <div className={cn(
+                      "mt-1 shrink-0 text-zinc-500 transition-transform duration-500 ease-in-out",
+                      isOpen ? "rotate-180" : "rotate-0 group-hover:text-zinc-300"
+                    )}>
+                      <CaretDownIcon size={20} />
+                    </div>
+                  </button>
 
-                <AnimatePresence initial={false}>
-                  {isOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: "easeInOut" }}
-                    >
-                      <div className="px-6 md:px-8 pb-8 pt-0 pl-[4.5rem] md:pl-[5.5rem]">
-                        <div className="h-px w-12 bg-neutral-200 mb-6" />
-                        <p className="text-lg text-neutral-600 leading-relaxed max-w-2xl">
-                          {item.answer}
-                        </p>
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                        className="overflow-hidden"
+                      >
+                        <div className="pt-6 pb-2">
+                          <div className="flex gap-4">
+                            <span className="text-zinc-700 select-none hidden sm:block">—</span>
+                            <p className="text-lg text-zinc-400 leading-relaxed">
+                              {item.answer}
+                            </p>
+                          </div>
 
-                        <div className="mt-6 flex items-center gap-2">
-                          <span className="text-xs font-bold uppercase tracking-widest text-neutral-300">Category:</span>
-                          <span className="text-xs font-medium bg-white border border-neutral-200 px-2 py-1 rounded text-neutral-500">
-                            {item.category}
-                          </span>
+                          {/* Mobile Category display */}
+                          <div className="mt-6 md:hidden">
+                            <span className="text-zinc-600 uppercase tracking-widest text-xs border border-zinc-800 px-3 py-1 rounded-full">
+                              {item.category}
+                            </span>
+                          </div>
                         </div>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
               </motion.div>
             )
           })}
         </div>
 
-        {/* FOOTER CTA */}
-        <div className="mt-20 text-center">
-          <p className="text-neutral-500 mb-4">Still have questions?</p>
-          <a href="/contact" className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest border-b border-neutral-900 pb-1 hover:text-neutral-600 hover:border-neutral-600 transition-colors">
-            Contact Support <ArrowRightIcon weight="bold" />
+        {/* Footer CTA */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="mt-32 pt-16 border-t border-zinc-900 flex flex-col md:flex-row items-center justify-between gap-8"
+        >
+          <p className="text-zinc-400 text-lg">Still have questions regarding our process?</p>
+          <a
+            href="/contact"
+            className="inline-flex items-center gap-3 text-zinc-50 border-b border-zinc-700 pb-1 hover:border-zinc-300 transition-colors duration-300 group"
+          >
+            <span className="uppercase tracking-widest text-sm">Contact Support</span>
+            <ArrowRightIcon className="group-hover:translate-x-1 transition-transform" />
           </a>
-        </div>
+        </motion.div>
 
       </div>
     </section>

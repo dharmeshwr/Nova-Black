@@ -41,7 +41,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
-          className="max-md:text-center w-full xl:w-1/3 mt-auto text-lg mb-12"
+          className="max-md:text-center w-full xl:w-1/3 mt-auto text-lg mb-24"
         >
           We design and develop exceptional digital products & services, eCommerce, and brand communication solutions.
         </motion.p>

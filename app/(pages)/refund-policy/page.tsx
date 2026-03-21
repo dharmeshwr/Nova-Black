@@ -55,116 +55,87 @@ export default function RefundPolicy() {
   ];
 
   return (
-    <section className="min-h-screen bg-background text-foreground font-sans pt-32 pb-24 selection:bg-neutral-200">
-      <div className="max-w-6xl mx-auto px-6 md:px-10">
+    <section className="min-h-screen bg-zinc-950 text-zinc-50 font-sans py-24 md:py-32 selection:bg-zinc-800 selection:text-zinc-50">
+      <div className="max-w-5xl mx-auto px-6 md:px-12">
 
-        <div className="flex flex-col items-center text-center mb-24">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-100 mb-6 border border-neutral-200">
-              <ShieldWarningIcon weight="fill" className="text-amber-600" />
-              <span className="text-xs font-bold uppercase tracking-widest text-neutral-500">Service Protocol</span>
-            </div>
+        {/* Header Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="mb-24 md:mb-32 border-b border-zinc-800 pb-16"
+        >
+          <div className="flex items-center gap-3 text-zinc-400 mb-8">
+            <ShieldWarningIcon size={24} />
+            <span className="uppercase tracking-widest text-sm">Service Protocol</span>
+          </div>
 
-            <h1 className="text-5xl md:text-8xl font-light tracking-tight mb-8">
-              Refund <span className="font-serif italic text-neutral-400 mr-4">&</span>
-              Cancellation
-            </h1>
+          <h1 className="text-4xl md:text-6xl tracking-tight text-zinc-50 mb-6">
+            Refund & Cancellation
+          </h1>
 
-            <p className="max-w-xl mx-auto text-lg text-neutral-500 leading-relaxed">
-              Since we provide custom IT solutions, our policy protects the intellectual effort and resources allocated to your project.
-            </p>
-          </motion.div>
-        </div>
+          <p className="max-w-2xl text-xl text-zinc-400 leading-relaxed">
+            Since we provide custom IT solutions, our policy protects the intellectual effort and resources allocated to your project.
+          </p>
+        </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 relative">
+        {/* Policies Split-Row Layout */}
+        <div className="flex flex-col">
+          {policies.map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-10%" }}
+              transition={{ duration: 0.5, delay: index * 0.05 }}
+              className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 py-12 border-b border-zinc-900 group"
+            >
 
-          <div className="hidden lg:block lg:col-span-4 relative">
-            <div className="sticky top-32">
-              <div className="p-8 bg-neutral-50 rounded-3xl border border-neutral-100">
-                <span className="text-xs font-bold uppercase tracking-widest text-neutral-400 mb-4 block">
-                  Quick Summary
+              {/* Left Column: Number and Title */}
+              <div className="md:col-span-4 flex flex-col gap-2">
+                <span className="font-mono text-zinc-600 text-sm">
+                  /{String(index + 1).padStart(2, '0')}
                 </span>
-                <ul className="space-y-4 text-sm text-neutral-600">
-                  <li className="flex gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-neutral-400 mt-2 shrink-0" />
-                    Services are project-based.
-                  </li>
-                  <li className="flex gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-neutral-400 mt-2 shrink-0" />
-                    Payments are non-refundable once work begins.
-                  </li>
-                  <li className="flex gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-neutral-400 mt-2 shrink-0" />
-                    Scope revisions allowed within 14 days.
-                  </li>
-                </ul>
+                <h2 className="text-2xl text-zinc-200 group-hover:text-zinc-50 transition-colors duration-300">
+                  {item.title}
+                </h2>
               </div>
-            </div>
-          </div>
 
-          <div className="lg:col-span-8 flex flex-col gap-16">
-            {policies.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-                className="group relative pl-8 md:pl-0"
-              >
-                {/* Mobile Decorator Line */}
-                <div className="absolute left-0 top-0 bottom-0 w-px bg-neutral-200 md:hidden" />
-                <div className="absolute left-[-4px] top-2 w-2 h-2 rounded-full bg-neutral-300 md:hidden" />
-
-                <div className="flex flex-col md:flex-row gap-6 md:gap-10">
-                  <span className="hidden md:block text-xs font-bold text-neutral-300 font-mono pt-2 w-12 shrink-0">
-                    {String(index + 1).padStart(2, '0')}
-                  </span>
-
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-medium tracking-tight mb-4 group-hover:text-amber-700 transition-colors duration-300">
-                      {item.title}
-                    </h3>
-
-                    <div className="text-neutral-600 leading-relaxed text-lg">
-                      {Array.isArray(item.content) ? (
-                        <ul className="space-y-3 mt-4 bg-neutral-50 p-6 rounded-2xl">
-                          {item.content.map((line, i) => (
-                            <li key={i} className="flex gap-3 text-base">
-                              <span className="w-1.5 h-1.5 rounded-full bg-neutral-400 mt-2.5 shrink-0" />
-                              {line}
-                            </li>
-                          ))}
-                        </ul>
-                      ) : (
-                        <p>{item.content}</p>
-                      )}
-
-                      {item.email && (
-                        <div className="mt-8">
-                          <a
-                            href={`mailto:${item.email}`}
-                            className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-neutral-200 hover:border-neutral-900 hover:bg-neutral-900 hover:text-white transition-all duration-300 text-sm font-medium"
-                          >
-                            <EnvelopeSimpleIcon size={18} />
-                            {item.email}
-                          </a>
+              {/* Right Column: Content */}
+              <div className="md:col-span-8">
+                <div className="text-lg text-zinc-400 leading-relaxed">
+                  {Array.isArray(item.content) ? (
+                    <div className="flex flex-col gap-4">
+                      {item.content.map((line, i) => (
+                        <div key={i} className="flex gap-4">
+                          <span className="text-zinc-700 select-none">—</span>
+                          <span className="text-zinc-300">{line}</span>
                         </div>
-                      )}
+                      ))}
                     </div>
-                  </div>
+                  ) : (
+                    <p className="text-zinc-300">{item.content}</p>
+                  )}
+
+                  {/* Email Link */}
+                  {item.email && (
+                    <div className="mt-8">
+                      <a
+                        href={`mailto:${item.email}`}
+                        className="inline-flex items-center gap-3 text-zinc-50 border-b border-zinc-700 pb-1 hover:border-zinc-300 transition-colors duration-300"
+                      >
+                        <EnvelopeSimpleIcon size={20} />
+                        <span>{item.email}</span>
+                      </a>
+                    </div>
+                  )}
                 </div>
+              </div>
 
-                <div className="h-px w-full bg-neutral-100 mt-16 md:ml-20" />
-              </motion.div>
-            ))}
-          </div>
-
+            </motion.div>
+          ))}
         </div>
+
       </div>
     </section>
   );

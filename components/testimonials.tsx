@@ -50,14 +50,6 @@ const testimonials = [
     role: "Founder",
     quote: "As a first-time founder, I needed a tech partner who could explain trade-offs clearly. BVPL did exactly that — and built something I'm proud to show investors."
   },
-  {
-    id: "07",
-    company: "IndusFlow",
-    fullCompany: "IndusFlow ERP Solutions",
-    author: "Vikram Shetty",
-    role: "Director – Operations",
-    quote: "Their work on our ERP customisation reduced our finance team's month-end close from four days to one. ROI was visible within the first quarter."
-  }
 ];
 
 export default function TestimonialLedger() {
@@ -66,13 +58,13 @@ export default function TestimonialLedger() {
       <div className="max-w-7xl mx-auto">
 
         {/* Header Area */}
-        <div className="mb-16 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-zinc-800 pb-12">
+        <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8 ">
           <div>
             <h2 className="text-zinc-500 font-mono text-xs uppercase tracking-widest mb-4">
               Client Dossier
             </h2>
-            <h3 className="text-4xl md:text-6xl font-medium tracking-tight text-white">
-              Trusted by <span className="text-zinc-500 font-serif italic font-light">Industry Leaders.</span>
+            <h3 className="text-4xl md:text-6xl tracking-tight text-white">
+              Trusted by <span className="text-zinc-500 ">Industry Leaders.</span>
             </h3>
           </div>
           <p className="max-w-sm text-zinc-400 text-sm leading-relaxed">
@@ -121,18 +113,7 @@ export default function TestimonialLedger() {
               </div>
             </article>
           ))}
-
-          {/* Empty Cell Filler for the 3-column grid (since we have 7 items) */}
-          <div className="hidden lg:flex flex-col justify-center items-center p-8 border-r border-b border-zinc-800 bg-zinc-900/10">
-            <span className="text-zinc-700 font-mono text-xs uppercase tracking-widest">
-              [ End of Ledger ]
-            </span>
-          </div>
-          <div className="hidden lg:flex flex-col justify-center items-center p-8 border-r border-b border-zinc-800 bg-zinc-900/10">
-            {/* Additional empty cell to complete the 3x3 grid */}
-          </div>
         </div>
-
       </div>
     </section>
   );

@@ -47,11 +47,11 @@ export default function StaticMetricsGridDark() {
             <h2 className="text-zinc-500 font-mono text-xs uppercase tracking-widest mb-4">
               Performance Ledger
             </h2>
-            <h3 className="text-4xl md:text-5xl font-semibold tracking-tight">
+            <h3 className="text-4xl md:text-5xl tracking-tight">
               By the numbers.
             </h3>
           </div>
-          <p className="text-zinc-400 max-w-sm text-sm mt-6 md:mt-0 leading-relaxed font-medium">
+          <p className="text-zinc-400 max-w-sm text-sm mt-6 md:mt-0 leading-relaxed ">
             A transparent look at our operational output, engineering capacity, and client success metrics.
           </p>
         </div>
@@ -68,7 +68,7 @@ export default function StaticMetricsGridDark() {
                 <span className="font-mono text-xs text-zinc-500">
                   [{stat.id}]
                 </span>
-                <div className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-emerald-400 bg-emerald-400/10 border border-emerald-400/20 px-2 py-1 rounded-sm">
+                <div className="flex items-center gap-1 text-[10px] font-medium uppercase tracking-wider text-emerald-400 bg-emerald-400/10 border border-emerald-400/20 px-2 py-1 rounded-sm">
                   <TrendUpIcon weight="bold" />
                   {stat.growth}
                 </div>
@@ -81,7 +81,7 @@ export default function StaticMetricsGridDark() {
                     {stat.value}
                   </span>
                   {stat.suffix && (
-                    <span className="text-2xl font-medium text-zinc-500">
+                    <span className="text-2xl text-zinc-500">
                       {stat.suffix}
                     </span>
                   )}

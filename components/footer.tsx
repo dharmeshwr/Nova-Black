@@ -29,7 +29,7 @@ export default function Footer() {
                 width={80}
                 height={80}
               />
-              <div className="text-4xl font-semibold tracking-tighter">
+              <div className="text-4xl font-medium tracking-tighter">
                 Nova Black
               </div>
             </div>
@@ -40,40 +40,34 @@ export default function Footer() {
                 <p>Uttar Pradesh, India</p>
                 <br />
                 <p>+91 7351515156</p>
+                <br />
+                <div>
+                  © 2026 NovaBlack E-Tech Private Limited. All rights reserved.
+                </div>
               </div>
             </motion.div>
           </div>
 
           <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-4">
             <motion.div variants={itemVariants} className="space-y-6">
-              <h3 className="text-xs font-medium uppercase tracking-wider">LEGALS</h3>
-              <ul className="space-y-3 text-sm font-medium **:text-zinc-50/50 **:uppercase">
-                <li>
-                  <Link href="/refund-policy" className="hover:opacity-60 transition-opacity">
-                    Refund & Cancellation Policy
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/terms-and-conditions" className="hover:opacity-60 transition-opacity">
-                    Terms & Conditions
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/privacy-policy" className="hover:opacity-60 transition-opacity">
-                    Privacy Policy
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/faqs" className="hover:opacity-60 transition-opacity">
-                    FAQs
-                  </Link>
-                </li>
+              <h3 className="text-xs font-medium uppercase tracking-wider">Company</h3>
+              <ul className="space-y-3 text-sm **:text-zinc-50/50">
+                {["About", "Services", "Contact"].map((item) => (
+                  <li key={item}>
+                    <Link
+                      href={`/${item.toLowerCase()}`}
+                      className="hover:opacity-60 transition-opacity uppercase"
+                    >
+                      {item}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </motion.div>
 
             <motion.div variants={itemVariants} className="space-y-6">
               <h3 className="text-xs uppercase font-medium tracking-wider">Follow Us</h3>
-              <ul className="space-y-3 text-sm font-medium **:text-zinc-50/50">
+              <ul className="space-y-3 text-sm **:text-zinc-50/50">
                 <li>
                   <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-60 transition-opacity uppercase">
                     Instagram
@@ -97,19 +91,30 @@ export default function Footer() {
               </ul>
             </motion.div>
 
+
             <motion.div variants={itemVariants} className="space-y-6">
-              <h3 className="text-xs font-medium uppercase tracking-wider">Company</h3>
-              <ul className="space-y-3 text-sm font-medium **:text-zinc-50/50">
-                {["About", "Services", "Contact"].map((item) => (
-                  <li key={item}>
-                    <Link
-                      href={`/${item.toLowerCase()}`}
-                      className="hover:opacity-60 transition-opacity uppercase"
-                    >
-                      {item}
-                    </Link>
-                  </li>
-                ))}
+              <h3 className="text-xs font-medium uppercase tracking-wider">LEGALS</h3>
+              <ul className="space-y-3 text-sm **:text-zinc-50/50 **:uppercase">
+                <li>
+                  <Link href="/refund-policy" className="hover:opacity-60 transition-opacity">
+                    Refund & Cancellation Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/terms-and-conditions" className="hover:opacity-60 transition-opacity">
+                    Terms & Conditions
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/privacy-policy" className="hover:opacity-60 transition-opacity">
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/faqs" className="hover:opacity-60 transition-opacity">
+                    FAQs
+                  </Link>
+                </li>
               </ul>
             </motion.div>
           </div>

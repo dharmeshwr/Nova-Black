@@ -6,7 +6,6 @@ import {
   Cube,
   Trophy,
   Megaphone,
-  ArrowUpRight
 } from "@phosphor-icons/react";
 import { cn } from "@/lib/utils";
 
@@ -64,14 +63,13 @@ export default function ServicesBentoGrid() {
       <div className="max-w-6xl mx-auto w-full">
 
         {/* Header */}
-        <div className="mb-16 max-w-2xl">
-          <h2 className="text-zinc-500 font-mono text-xs uppercase tracking-widest mb-4 flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
-            Capabilities
+        <div className="mb-12 max-w-2xl">
+          <h2 className="text-4xl md:text-5xl tracking-tight mb-4">
+            Our Capabilities
           </h2>
-          <h3 className="text-4xl md:text-6xl font-medium tracking-tighter leading-[1.1]">
-            We build digital experiences that <span className="text-zinc-500 italic font-serif">demand attention.</span>
-          </h3>
+          <p className="text-zinc-400 text-lg">
+            Comprehensive digital solutions built for modern brands.
+          </p>
         </div>
 
         {/* Bento Grid */}
@@ -80,7 +78,7 @@ export default function ServicesBentoGrid() {
             <div
               key={service.id}
               className={cn(
-                "group relative overflow-hidden rounded-3xl bg-zinc-900/50 border border-zinc-800/50 p-8 transition-all duration-500 hover:border-zinc-700 hover:shadow-2xl flex flex-col justify-between",
+                "group relative overflow-hidden bg-zinc-900/50 border border-zinc-800/50 p-8 transition-all duration-500 hover:border-zinc-700 hover:shadow-2xl flex flex-col justify-between",
                 service.className
               )}
             >
@@ -92,7 +90,7 @@ export default function ServicesBentoGrid() {
 
               {/* Top Row: Icon & Number */}
               <div className="relative z-10 flex justify-between items-start">
-                <div className={cn("p-3 rounded-2xl bg-zinc-950/50 border border-zinc-800/50 backdrop-blur-sm", service.iconColor)}>
+                <div className={cn("p-3 bg-zinc-950/50 border border-zinc-800/50 backdrop-blur-sm", service.iconColor)}>
                   <service.icon size={28} weight="duotone" />
                 </div>
                 <span className="font-mono text-sm text-zinc-600 group-hover:text-zinc-300 transition-colors">
@@ -115,13 +113,6 @@ export default function ServicesBentoGrid() {
                 weight="fill"
                 className="absolute -bottom-8 -right-8 text-zinc-800/20 w-48 h-48 group-hover:scale-110 group-hover:-rotate-12 transition-transform duration-700 ease-out z-0"
               />
-
-              {/* Hover Action Button */}
-              <div className="absolute top-8 right-8 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500 z-10 hidden md:block">
-                <button className="bg-white text-black p-2 rounded-full hover:scale-110 transition-transform">
-                  <ArrowUpRight size={20} weight="bold" />
-                </button>
-              </div>
 
             </div>
           ))}

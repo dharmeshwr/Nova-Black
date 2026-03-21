@@ -1,123 +1,185 @@
 'use client'
+import { useState } from "react";
 import {
-  ArrowRightIcon,
   BuildingsIcon,
   GraduationCapIcon,
   ShoppingCartIcon,
   FilmSlateIcon,
-  HeartbeatIcon
+  HeartbeatIcon,
+  ArrowRightIcon
 } from "@phosphor-icons/react";
 
 const industries = [
-  {
-    id: "healthtech",
-    title: "Healthcare",
-    subtitle: "Telemedicine & EHR",
-    description: "HIPAA-compliant platforms for remote patient monitoring and secure medical data exchange.",
-    icon: HeartbeatIcon
-  },
   {
     id: "retail",
     title: "Retail",
     subtitle: "Global Commerce",
     description: "Headless commerce architectures that scale to millions of SKUs without latency.",
-    icon: ShoppingCartIcon
+    icon: ShoppingCartIcon,
+    theme: {
+      text: "text-blue-400",
+      bg: "bg-blue-500/10",
+      border: "border-blue-500/30",
+      hover: "group-hover:text-blue-400"
+    }
   },
   {
     id: "edtech",
     title: "EdTech",
     subtitle: "Virtual Classrooms",
     description: "Low-latency video streaming and interactive LMS platforms for the modern campus.",
-    icon: GraduationCapIcon
+    icon: GraduationCapIcon,
+    theme: {
+      text: "text-amber-400",
+      bg: "bg-amber-500/10",
+      border: "border-amber-500/30",
+      hover: "group-hover:text-amber-400"
+    }
+  },
+  {
+    id: "healthtech",
+    title: "Healthcare",
+    subtitle: "Telemedicine & EHR",
+    description: "HIPAA-compliant platforms for remote patient monitoring and secure medical data exchange.",
+    icon: HeartbeatIcon,
+    theme: {
+      text: "text-emerald-400",
+      bg: "bg-emerald-500/10",
+      border: "border-emerald-500/30",
+      hover: "group-hover:text-emerald-400"
+    }
   },
   {
     id: "proptech",
     title: "Estate",
     subtitle: "Smart Property",
     description: "IoT integration for smart buildings and virtual reality tour experiences.",
-    icon: BuildingsIcon
+    icon: BuildingsIcon,
+    theme: {
+      text: "text-violet-400",
+      bg: "bg-violet-500/10",
+      border: "border-violet-500/30",
+      hover: "group-hover:text-violet-400"
+    }
   },
   {
     id: "media",
     title: "Media",
     subtitle: "Content Delivery",
     description: "High-bandwidth streaming protocols and DRM protection for premium content.",
-    icon: FilmSlateIcon
+    icon: FilmSlateIcon,
+    theme: {
+      text: "text-rose-400",
+      bg: "bg-rose-500/10",
+      border: "border-rose-500/30",
+      hover: "group-hover:text-rose-400"
+    }
   },
 ];
 
 export default function IndustriesDirectory() {
-  return (
-    <section className="py-24 bg-zinc-950 text-zinc-50 font-sans px-6 md:px-10">
-      <div className="max-w-7xl mx-auto">
+  // Track the currently hovered item (default to the first one)
+  const [activeId, setActiveId] = useState(industries[0].id);
 
-        {/* Header Area */}
-        <div className="mb-16 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-zinc-800 pb-12">
-          <div>
-            <h2 className="text-zinc-500 font-mono text-xs uppercase tracking-widest mb-4">
+  // Find the active industry object to render the dynamic left panel
+  const activeIndustry = industries.find((item) => item.id === activeId);
+  const ActiveIcon = activeIndustry.icon;
+
+  return (
+    <section className="py-24 bg-zinc-950 text-zinc-50 font-sans px-6 md:px-10 min-h-screen flex items-center">
+      <div className="max-w-7xl mx-auto w-full">
+
+        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 relative">
+
+          {/* Left Column: Sticky Dynamic Display */}
+          <div className="w-full lg:w-1/3 lg:sticky lg:top-32 h-max">
+            <h2 className="text-zinc-500 font-mono text-xs uppercase tracking-widest mb-4 flex items-center gap-2">
+              <span className="w-8 h-px bg-zinc-700"></span>
               Sector Expertise
             </h2>
-            <h3 className="text-4xl md:text-6xl font-medium tracking-tight text-white">
-              Industry <span className="text-zinc-500 font-serif italic font-light">Experience.</span>
+            <h3 className="text-4xl md:text-6xl tracking-tight text-white mb-6">
+              Industry <br />
+              <span className="text-zinc-600">Experience.</span>
             </h3>
+            <p className="text-zinc-400 text-sm leading-relaxed mb-10">
+              Specialized digital infrastructure and architectural solutions tailored to the strict demands of specific global sectors.
+            </p>
+
+            {/* Dynamic Visual Indicator */}
+            <div className={`hidden lg:flex w-full aspect-square rounded-3xl border ${activeIndustry.theme.border} ${activeIndustry.theme.bg} transition-all duration-700 items-center justify-center relative overflow-hidden`}>
+              {/* Subtle background glow effect */}
+              <div className={`absolute inset-0 opacity-20 blur-3xl rounded-full ${activeIndustry.theme.bg} scale-150 transition-all duration-700`} />
+
+              <ActiveIcon
+                size={140}
+                weight="duotone"
+                className={`relative z-10 ${activeIndustry.theme.text} drop-shadow-2xl transition-all duration-500`}
+              />
+            </div>
           </div>
-          <p className="max-w-sm text-zinc-400 text-sm leading-relaxed">
-            Specialized digital infrastructure and architectural solutions tailored to the strict demands of specific global sectors.
-          </p>
-        </div>
 
-        {/* Directory List */}
-        <div className="flex flex-col border-t border-zinc-800">
-          {industries.map((item, index) => (
-            <article
-              key={item.id}
-              className="group flex flex-col lg:flex-row items-start lg:items-center justify-between py-10 border-b border-zinc-800 hover:bg-zinc-900/30 transition-colors duration-300 px-4 -mx-4 rounded-xl"
-            >
+          {/* Right Column: Interactive Directory Menu */}
+          <div className="w-full lg:w-2/3 flex flex-col gap-4">
+            {industries.map((item, index) => {
+              const isActive = activeId === item.id;
 
-              {/* Column 1: Number & Icon */}
-              <div className="flex items-center gap-6 w-full lg:w-48 mb-6 lg:mb-0 shrink-0">
-                <span className="font-mono text-xs text-zinc-600">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-                <div className="p-3 bg-zinc-900 border border-zinc-800 rounded-lg text-zinc-400 group-hover:text-white group-hover:bg-zinc-800 transition-colors">
-                  <item.icon size={24} weight="duotone" />
-                </div>
-              </div>
-
-              {/* Column 2: Title & Subtitle */}
-              <div className="w-full lg:w-64 mb-4 lg:mb-0 shrink-0">
-                <h4 className="text-2xl font-semibold tracking-tight text-zinc-100 mb-1">
-                  {item.title}
-                </h4>
-                <p className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">
-                  {item.subtitle}
-                </p>
-              </div>
-
-              {/* Column 3: Description */}
-              <div className="w-full lg:flex-1 max-w-2xl mb-8 lg:mb-0 pr-0 lg:pr-12">
-                <p className="text-zinc-400 text-sm md:text-base leading-relaxed">
-                  {item.description}
-                </p>
-              </div>
-
-              {/* Column 4: Action */}
-              <div className="w-full lg:w-auto shrink-0 flex justify-start lg:justify-end">
-                <a
-                  href={`#${item.id}`}
-                  className="flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-zinc-300 hover:text-white transition-colors group/btn"
+              return (
+                <article
+                  key={item.id}
+                  onMouseEnter={() => setActiveId(item.id)}
+                  className={`
+                    group relative flex flex-col sm:flex-row items-start sm:items-center justify-between p-6 md:p-8 
+                    rounded-2xl border transition-all duration-500 cursor-pointer overflow-hidden
+                    ${isActive
+                      ? `bg-zinc-900 border-zinc-700 shadow-2xl`
+                      : `bg-zinc-950/50 border-zinc-800/50 hover:bg-zinc-900/50 hover:border-zinc-700/80`
+                    }
+                  `}
                 >
-                  Explore
-                  <span className="p-2 bg-zinc-900 border border-zinc-800 rounded-full group-hover/btn:bg-white group-hover/btn:text-black transition-all">
-                    <ArrowRightIcon size={14} weight="bold" />
-                  </span>
-                </a>
-              </div>
+                  {/* Subtle active state background highlight */}
+                  <div className={`absolute inset-0 opacity-0 transition-opacity duration-500 ${isActive ? 'opacity-100' : ''} ${item.theme.bg} pointer-events-none`} />
 
-            </article>
-          ))}
+                  {/* Left Side: Number, Icon & Text */}
+                  <div className="flex items-center gap-6 relative z-10 w-full sm:w-auto">
+                    <div className={`p-4 rounded-xl border transition-colors duration-300 ${isActive ? `bg-zinc-950 ${item.theme.border}` : 'bg-zinc-900 border-zinc-800 group-hover:bg-zinc-800'}`}>
+                      <item.icon size={28} weight={isActive ? "duotone" : "regular"} className={`transition-colors duration-300 ${isActive ? item.theme.text : 'text-zinc-400 ' + item.theme.hover}`} />
+                    </div>
+
+                    <div>
+                      <h4 className={`text-2xl md:text-3xl tracking-tight transition-colors duration-300 ${isActive ? 'text-zinc-50' : 'text-zinc-300 group-hover:text-zinc-100'}`}>
+                        {item.title}
+                      </h4>
+                      <p className={`font-mono text-[10px] md:text-xs uppercase tracking-widest mt-1 transition-colors duration-300 ${isActive ? item.theme.text : 'text-zinc-600'}`}>
+                        {item.subtitle}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Right Side: Description & Arrow */}
+                  <div className="relative z-10 mt-6 sm:mt-0 sm:pl-8 sm:border-l border-zinc-800/50 max-w-sm flex items-center gap-6">
+                    <p className={`text-sm leading-relaxed transition-colors duration-300 ${isActive ? 'text-zinc-300' : 'text-zinc-500'}`}>
+                      {item.description}
+                    </p>
+
+                    {/* Animated Arrow Indicator */}
+                    <div className="hidden sm:flex shrink-0 w-10 h-10 items-center justify-center rounded-full bg-zinc-900 border border-zinc-800 text-zinc-400 overflow-hidden relative">
+                      <ArrowRightIcon
+                        size={16}
+                        className={`absolute transition-all duration-500 ${isActive ? 'translate-x-0 opacity-100' : '-translate-x-8 opacity-0'} ${item.theme.text}`}
+                      />
+                      <ArrowRightIcon
+                        size={16}
+                        className={`absolute transition-all duration-500 ${isActive ? 'translate-x-8 opacity-0' : 'translate-x-0 opacity-100'}`}
+                      />
+                    </div>
+                  </div>
+
+                </article>
+              );
+            })}
+          </div>
+
         </div>
-
       </div>
     </section>
   );

@@ -2,36 +2,64 @@
 
 import {
   ArrowRightIcon,
-  MapPinIcon,
   EnvelopeSimpleIcon,
   PhoneCallIcon,
   TwitterLogoIcon,
   InstagramLogoIcon,
   GlobeHemisphereWestIcon,
   ArrowUpRightIcon,
-  LinkedinLogoIcon
+  LinkedinLogoIcon,
+  MapPinIcon
 } from '@phosphor-icons/react';
-import { motion } from 'motion/react';
-import { cn } from '@/lib/utils';
+import { Easing, motion, Variants } from 'motion/react';
 
-export default function Contact() {
+const sharpEase: Easing = [0.16, 1, 0.3, 1];
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const slideRight: Variants = {
+  hidden: { opacity: 0, x: -20 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.6, ease: sharpEase }
+  },
+};
+
+const fadeVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { duration: 0.8, ease: sharpEase }
+  }
+};
+
+export default function ContactDark() {
 
   const contactMethods = [
     {
       id: "email",
       label: "General Inquiries",
       value: "info@bobyventures.com",
-      action: "Send Message",
+      action: "Transmit Email",
       href: "mailto:info@bobyventures.com",
       icon: EnvelopeSimpleIcon,
-      highlight: true
     },
     {
       id: "phone",
       label: "Direct Voice Line",
       value: "+91 7351515156",
       sub: "Mon–Fri, 10:00–18:00 IST",
-      action: "Call Now",
+      action: "Initiate Call",
       href: "tel:+917351515156",
       icon: PhoneCallIcon
     }
@@ -45,100 +73,89 @@ export default function Contact() {
   ];
 
   return (
-    <div className="min-h-screen bg-background text-foreground font-sans selection:bg-neutral-200 pt-24 pb-12">
+    <div className="min-h-screen bg-zinc-950 text-zinc-50 font-sans selection:bg-zinc-800 selection:text-zinc-50 pt-32 pb-24">
 
-      <section className="px-6 md:px-10 my-20">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-          >
-            <h1 className="text-6xl font-light tracking-tight leading-[0.9] mb-8">
-              Let&apos;s start a
-              <span className="ml-1 font-serif italic text-neutral-400">conversation.</span>
-            </h1>
-            <p className="text-lg md:text-xl text-neutral-600 max-w-xl leading-relaxed ml-2">
-              Ready to engineer your next solution? Reach out via our secure channels below.
-              Response time typically under 24 hours.
-            </p>
-          </motion.div>
-        </div>
+      {/* 1. HERO: Stark Typography */}
+      <section className="px-6 md:px-12 mb-16">
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={containerVariants}
+          className="max-w-screen-2xl mx-auto"
+        >
+          <motion.h1 variants={fadeVariants} className="text-6xl md:text-8xl lg:text-[9rem] uppercase tracking-tight leading-[0.85] text-zinc-50 mb-8">
+            Establish <br />
+            <span className="text-zinc-600">Contact.</span>
+          </motion.h1>
+          <motion.p variants={fadeVariants} className="text-lg md:text-xl text-zinc-400 font-light max-w-2xl leading-relaxed">
+            Ready to engineer your next solution? Reach out via our secure channels. Response sequence typically initiated under 24 hours.
+          </motion.p>
+        </motion.div>
       </section>
 
-      <section className="px-6 md:px-10 mb-12">
-        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-8 lg:gap-16">
+      {/* 2. MAIN GRID: Strict Ledger Layout */}
+      <section className="border-t border-zinc-900">
+        <div className="max-w-screen-2xl mx-auto grid grid-cols-1 lg:grid-cols-12">
 
-          <div className="lg:w-7/12 flex flex-col gap-6">
-
+          {/* Left Column: Direct Contact Methods */}
+          <div className="lg:col-span-7 flex flex-col border-b lg:border-b-0 lg:border-r border-zinc-900">
             {contactMethods.map((method, idx) => (
               <motion.a
                 key={method.id}
                 href={method.href}
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.2 + (idx * 0.1), duration: 0.5 }}
-                className={cn(
-                  "group relative p-8 md:p-12 rounded-[2.5rem] transition-all duration-500 flex flex-col justify-between overflow-hidden min-h-[300px]",
-                  method.highlight
-                    ? "bg-foreground text-background"
-                    : "bg-neutral-50 hover:bg-neutral-100 text-foreground"
-                )}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={slideRight}
+                className="group relative p-8 md:p-16 border-b border-zinc-900 last:border-b-0 hover:bg-zinc-900/30 transition-colors duration-500 flex flex-col justify-between min-h-[350px]"
               >
-                <method.icon
-                  weight="fill"
-                  className={cn(
-                    "absolute -right-8 -bottom-8 opacity-[0.05] transition-transform duration-700 group-hover:scale-125 group-hover:rotate-12",
-                    method.highlight ? "text-background" : "text-foreground"
-                  )}
-                  size={200}
-                />
-
-                <div className="relative z-10 flex justify-between items-start">
-                  <span className={cn(
-                    "px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest border",
-                    method.highlight ? "border-white/20 text-neutral-300" : "border-black/10 text-neutral-500"
-                  )}>
-                    {method.label}
-                  </span>
-                  <div className={cn(
-                    "p-3 rounded-full transition-colors",
-                    method.highlight ? "bg-white/10 text-white" : "bg-black/5 text-black"
-                  )}>
-                    <ArrowUpRightIcon size={24} />
+                <div className="flex justify-between items-start mb-12">
+                  <div className="flex items-center gap-4">
+                    <method.icon size={24} weight="light" className="text-zinc-500 group-hover:text-zinc-50 transition-colors" />
+                    <span className="text-xs font-mono text-zinc-500 uppercase tracking-widest">
+                      {method.label}
+                    </span>
                   </div>
+                  <ArrowUpRightIcon size={24} weight="light" className="text-zinc-700 group-hover:text-zinc-50 transition-colors transform group-hover:rotate-45" />
                 </div>
 
-                <div className="relative z-10 mt-auto">
-                  <h3 className={cn(
-                    "font-medium tracking-tight mb-2 break-all",
-                    method.highlight ? "text-3xl md:text-5xl" : "text-4xl md:text-6xl"
-                  )}>
+                <div>
+                  <h3 className="text-3xl md:text-5xl lg:text-6xl font-light tracking-tight mb-4 group-hover:text-white transition-colors break-words">
                     {method.value}
                   </h3>
-                  {method.sub && (
-                    <p className={cn("text-sm", method.highlight ? "text-neutral-400" : "text-neutral-500")}>
-                      {method.sub}
-                    </p>
-                  )}
 
-                  <div className="mt-8 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider group-hover:gap-4 transition-all">
-                    <span>{method.action}</span>
-                    <ArrowRightIcon />
+                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mt-8">
+                    {method.sub ? (
+                      <p className="text-sm font-mono text-zinc-500 uppercase tracking-wider">
+                        {method.sub}
+                      </p>
+                    ) : <div />}
+
+                    <div className="inline-flex items-center gap-3 text-sm font-medium uppercase tracking-widest text-zinc-400 group-hover:text-zinc-50 transition-colors">
+                      {method.action}
+                      <ArrowRightIcon size={16} weight="light" className="group-hover:translate-x-2 transition-transform" />
+                    </div>
                   </div>
                 </div>
               </motion.a>
             ))}
-
           </div>
 
-          <div className="lg:w-5/12 flex flex-col gap-6">
+          {/* Right Column: Map & Socials */}
+          <div className="lg:col-span-5 flex flex-col">
+
+            {/* Map Frame */}
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.4 }}
-              className="relative h-[400px] lg:h-full min-h-[400px] rounded-[2.5rem] overflow-hidden bg-neutral-200"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeVariants}
+              className="h-[400px] lg:h-[500px] w-full relative bg-zinc-950 border-b border-zinc-900 flex flex-col"
             >
+              <div className="p-4 border-b border-zinc-900 flex items-center justify-between">
+                <span className="text-xs font-mono text-zinc-500 uppercase tracking-widest">Location Coordinates</span>
+                <MapPinIcon size={16} weight="light" className="text-zinc-600" />
+              </div>
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4258.394932957133!2d77.5032619!3d27.7234438!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397315c1186ae06f%3A0x8cc7b14d30e937ba!2sBoby%20Ventures%20Private%20Limited!5e1!3m2!1sen!2sin!4v1773475517816!5m2!1sen!2sin"
                 width="100%"
@@ -147,32 +164,42 @@ export default function Contact() {
                 allowFullScreen={true}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className="grayscale-50 opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-700"
+                className="flex-1 grayscale opacity-40 hover:opacity-80 transition-opacity duration-700"
               />
-
             </motion.div>
 
+            {/* Social Grid */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-              className="bg-neutral-50 rounded-[2.5rem] p-8 md:p-10"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeVariants}
+              className="flex-1 flex flex-col"
             >
-              <h4 className="text-xs font-bold uppercase tracking-widest text-neutral-400 mb-6">Social Grid</h4>
-              <div className="grid grid-cols-2 gap-4">
-                {socialLinks.map((link) => (
+              <div className="p-6 border-b border-zinc-900">
+                <h4 className="text-xs font-mono uppercase tracking-widest text-zinc-500">Social Network</h4>
+              </div>
+
+              <div className="grid grid-cols-2 flex-1">
+                {socialLinks.map((link, i) => (
                   <a
                     key={link.name}
                     href={link.href}
                     target="_blank"
-                    className="group flex items-center gap-3 p-4 rounded-2xl bg-white border border-neutral-100 hover:border-neutral-300 hover:shadow-sm transition-all duration-300"
+                    className={`group flex flex-col justify-center items-center gap-4 p-8 border-zinc-900 hover:bg-zinc-50 hover:text-zinc-950 transition-colors duration-300
+                      ${i % 2 === 0 ? 'border-r' : ''} 
+                      ${i < 2 ? 'border-b' : ''}
+                    `}
                   >
-                    <link.icon size={24} className="text-neutral-400 group-hover:text-foreground transition-colors" />
-                    <span className="text-sm font-medium">{link.name}</span>
+                    <link.icon size={32} weight="light" className="text-zinc-600 group-hover:text-zinc-950 transition-colors" />
+                    <span className="text-xs font-medium uppercase tracking-widest text-zinc-400 group-hover:text-zinc-950 transition-colors">
+                      {link.name}
+                    </span>
                   </a>
                 ))}
               </div>
             </motion.div>
+
           </div>
         </div>
       </section>
