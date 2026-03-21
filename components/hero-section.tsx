@@ -16,7 +16,7 @@ export default function HeroSection() {
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
           className=" flex flex-col gap-10"
         >
-          <div className='tracking-tighter text-5xl md:text-6xl xl:text-7xl 2xl:text-8xl max-md:text-center'>
+          <div className='tracking-tighter text-5xl md:text-6xl xl:text-7xl 2xl:text-8xl max-md:text-center pt-10'>
             <Balancer>
               <span className='whitespace-nowrap'>
                 Design. Development.
