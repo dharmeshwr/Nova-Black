@@ -16,7 +16,7 @@ export default function ShippingPolicy() {
           <div className="pt-6 border-t border-foreground/20">
             <div className="flex flex-col gap-1">
               <span className="text-xs font-mono uppercase text-muted-foreground">Last Updated</span>
-              <span className="text-lg font-medium">14 March 2026</span>
+              <span className="text-lg font-medium">21 March 2026</span>
             </div>
           </div>
         </div>

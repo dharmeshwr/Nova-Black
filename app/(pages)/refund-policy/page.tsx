@@ -7,7 +7,7 @@ export default function RefundPolicy() {
   const policies = [
     {
       title: "Professional Services",
-      content: "All services offered by BVPL are professional and project‑based. Work begins only after the scope of work (SOW) is mutually agreed upon."
+      content: "All services offered by Novablack E-Tech Private Limited are professional and project‑based. Work begins only after the scope of work (SOW) is mutually agreed upon."
     },
     {
       title: "No Monetary Refunds",
@@ -32,8 +32,8 @@ export default function RefundPolicy() {
     {
       title: "No Financial or Payment Services",
       content: [
-        "Boby Ventures Private Limited does not provide financial, investment, brokerage, escrow, wallet, or payment processing services.",
-        "All payments made to BVPL are strictly towards software development and IT consulting services rendered to clients."
+        "Novablack E-Tech Private Limited does not provide financial, investment, brokerage, escrow, wallet, or payment processing services.",
+        "All payments made to Novablack E-Tech Private Limited are strictly towards software development and IT consulting services rendered to clients."
       ]
     },
     {
@@ -45,12 +45,12 @@ export default function RefundPolicy() {
     },
     {
       title: "Force Majeure",
-      content: "BVPL shall not be held liable for delays or non-performance caused by events beyond reasonable control, including natural disasters, government actions, network failures, or force majeure events."
+      content: "Novablack E-Tech Private Limited shall not be held liable for delays or non-performance caused by events beyond reasonable control, including natural disasters, government actions, network failures, or force majeure events."
     },
     {
       title: "Dispute Resolution & Contact",
       content: "For any concerns related to cancellations or service delivery, clients may contact us. Disputes, if any, shall be subject to the jurisdiction of courts in Uttar Pradesh, India.",
-      email: "info@bobyventures.com"
+      email: "novablacketechprivatelimited@gmail.com"
     },
   ];
 

@@ -73,8 +73,6 @@ export default function ServicesDark() {
       description: "Unify your technology stack with bespoke API orchestrations. We bridge disparate systems via REST, SOAP, and GraphQL to eliminate operational silos and optimize data flow.",
       icon: PlugsConnectedIcon,
       subtext: "Secure, high-throughput system orchestration.",
-      isCompliance: false,
-      warningText: "BVPL operates strictly as a technical integrator. We do not handle, store, or process financial assets directly."
     },
     {
       title: "Internal Tools",

@@ -7,12 +7,12 @@ export default function TermsAndConditions() {
   const terms = [
     {
       title: "Acceptance of Terms",
-      content: "By accessing or using the BVPL website (“Site”), you agree to these Terms & Conditions (“Terms”). If you disagree, please refrain from using the Site."
+      content: "By accessing or using the Novablack E-Tech Private Limited website (“Site”), you agree to these Terms & Conditions (“Terms”). If you disagree, please refrain from using the Site."
     },
     {
       title: "Services",
       content: [
-        "BVPL provides information-technology consulting, development, and related professional services.",
+        "Novablack E-Tech Private Limited provides information-technology consulting, development, and related professional services.",
         "Information displayed on the website is indicative and does not constitute a binding offer.",
         "All commercial terms, timelines, and deliverables are governed exclusively by mutually signed Statements of Work (SOWs)."
       ]
@@ -23,24 +23,24 @@ export default function TermsAndConditions() {
     },
     {
       title: "Intellectual Property",
-      content: "All content, trademarks, and code on the Site are owned by BVPL or its licensors. No portion may be reproduced without written consent."
+      content: "All content, trademarks, and code on the Site are owned by Novablack E-Tech Private Limited or its licensors. No portion may be reproduced without written consent."
     },
     {
       title: "Limitation of Liability",
-      content: "To the maximum extent permitted by law, BVPL shall not be liable for any indirect, incidental, special, or consequential damages arising from the use of the Site or services."
+      content: "To the maximum extent permitted by law, Novablack E-Tech Private Limited shall not be liable for any indirect, incidental, special, or consequential damages arising from the use of the Site or services."
     },
     {
       title: "Confidentiality",
       content: [
-        "Any confidential or proprietary information shared by clients with Boby Ventures Private Limited during the course of project discussions or execution shall be used solely for service delivery.",
+        "Any confidential or proprietary information shared by clients with Novablack E-Tech Private Limited during the course of project discussions or execution shall be used solely for service delivery.",
         "Such information shall not be disclosed to any third party without prior written consent, except where disclosure is required by applicable law or regulatory authorities."
       ]
     },
     {
       title: "Third-Party Tools & Services",
       content: [
-        "BVPL may use third-party platforms, APIs, hosting providers, payment gateways, or software tools as part of service delivery.",
-        "BVPL does not control and shall not be responsible for outages, delays, changes, or limitations arising from such third-party services."
+        "Novablack E-Tech Private Limited may use third-party platforms, APIs, hosting providers, payment gateways, or software tools as part of service delivery.",
+        "Novablack E-Tech Private Limited does not control and shall not be responsible for outages, delays, changes, or limitations arising from such third-party services."
       ]
     },
     {
@@ -53,7 +53,7 @@ export default function TermsAndConditions() {
     {
       title: "Payment & Billing",
       content: [
-        "All payments made to Boby Ventures Private Limited are strictly for IT consulting and software development services.",
+        "All payments made to Novablack E-Tech Private Limited are strictly for IT consulting and software development services.",
         "Payments may be collected in advance or on a milestone basis as defined in the applicable Statement of Work (SOW).",
         "Once services have commenced or milestones are delivered, payments are non-refundable, subject to the Refund & Cancellation Policy."
       ]
@@ -61,14 +61,14 @@ export default function TermsAndConditions() {
     {
       title: "No Financial Intermediation",
       content: [
-        "BVPL does not provide financial, investment, brokerage, escrow, wallet, or payment processing services.",
-        "BVPL does not collect, hold, route, or manage customer funds.",
+        "Novablack E-Tech Private Limited does not provide financial, investment, brokerage, escrow, wallet, or payment processing services.",
+        "Novablack E-Tech Private Limited does not collect, hold, route, or manage customer funds.",
         "All payments are made directly by clients for services rendered."
       ]
     },
     {
       title: "Changes",
-      content: "BVPL reserves the right to update these Terms at any time; continued use constitutes acceptance after such updates are posted."
+      content: "Novablack E-Tech Private Limited reserves the right to update these Terms at any time; continued use constitutes acceptance after such updates are posted."
     },
     {
       title: "Deliverables & Timeline",
@@ -98,7 +98,7 @@ export default function TermsAndConditions() {
 
           <div className="flex items-center gap-3 text-zinc-500">
             <span className="w-2 h-2 rounded-full bg-emerald-500/50 animate-pulse" />
-            <span className="text-sm tracking-wide">Last Revised: March 14, 2026</span>
+            <span className="text-sm tracking-wide">Last Revised: March 21, 2026</span>
           </div>
         </motion.div>
 

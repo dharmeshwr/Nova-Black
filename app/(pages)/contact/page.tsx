@@ -49,18 +49,18 @@ export default function ContactDark() {
     {
       id: "email",
       label: "General Inquiries",
-      value: "info@bobyventures.com",
+      value: "novablacketechprivatelimited@gmail.com",
       action: "Transmit Email",
-      href: "mailto:info@bobyventures.com",
+      href: "mailto:novablacketechprivatelimited@gmail.com",
       icon: EnvelopeSimpleIcon,
     },
     {
       id: "phone",
       label: "Direct Voice Line",
-      value: "+91 7351515156",
+      value: "+91 6393883301",
       sub: "Mon–Fri, 10:00–18:00 IST",
       action: "Initiate Call",
-      href: "tel:+917351515156",
+      href: "tel:+916393883301",
       icon: PhoneCallIcon
     }
   ];
@@ -157,7 +157,7 @@ export default function ContactDark() {
                 <MapPinIcon size={16} weight="light" className="text-zinc-600" />
               </div>
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4258.394932957133!2d77.5032619!3d27.7234438!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397315c1186ae06f%3A0x8cc7b14d30e937ba!2sBoby%20Ventures%20Private%20Limited!5e1!3m2!1sen!2sin!4v1773475517816!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3602.4030412120796!2d81.648!3d25.458213999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDI3JzI5LjYiTiA4McKwMzgnNTIuOCJF!5e0!3m2!1sen!2sin!4v1774114927162!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

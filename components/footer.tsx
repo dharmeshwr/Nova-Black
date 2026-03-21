@@ -35,14 +35,14 @@ export default function Footer() {
             </div>
             <motion.div variants={itemVariants} className="space-y-6  mt-5 ml-2 **:text-zinc-100/50">
               <div className="text-sm leading-relaxed text-neutral-800 space-y-1">
-                <p>C/o Babagopal Dass, Kanhia Lal Moh,</p>
-                <p>G T Road, Chhata, Mathura – 281401,</p>
+                <p>C/o Phool Babu, Nizampur Purain Kaushambi,</p>
+                <p>Manauri, Allahabad – 212208,</p>
                 <p>Uttar Pradesh, India</p>
                 <br />
-                <p>+91 7351515156</p>
+                <p>+91 6393883301</p>
                 <br />
                 <div>
-                  © 2026 NovaBlack E-Tech Private Limited. All rights reserved.
+                  © 2026 Novablack E-Tech Private Limited. All rights reserved.
                 </div>
               </div>
             </motion.div>

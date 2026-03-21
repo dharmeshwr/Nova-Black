@@ -24,36 +24,36 @@ export default function PrivacyPolicy() {
     },
     {
       title: "Data Security",
-      content: "All contact form submissions are transmitted via SSL/HTTPS. BVPL follows industry-standard technical and organizational measures to prevent unauthorized access, loss, or misuse of personal data."
+      content: "All contact form submissions are transmitted via SSL/HTTPS. Novablack E-Tech Private Limited follows industry-standard technical and organizational measures to prevent unauthorized access, loss, or misuse of personal data."
     },
     {
       title: "Policy Updates",
-      content: "BVPL may update this Privacy Policy from time to time. Each update will be posted on this page with the date of last revision."
+      content: "Novablack E-Tech Private Limited may update this Privacy Policy from time to time. Each update will be posted on this page with the date of last revision."
     },
     {
       title: "Contact Us",
       content: "For any questions regarding this Privacy Policy, contact us.",
-      email: "info@bobyventures.com"
+      email: "novablacketechprivatelimited@gmail.com"
     },
     {
       title: "Data Retention",
-      content: "BVPL retains personal data collected through the website only for as long as necessary to respond to inquiries or provide services. Data is securely deleted or anonymized once it is no longer required."
+      content: "Novablack E-Tech Private Limited retains personal data collected through the website only for as long as necessary to respond to inquiries or provide services. Data is securely deleted or anonymized once it is no longer required."
     },
     {
       title: "Third-Party Services",
       content: [
-        "BVPL may use third-party service providers (hosting, email, analytics) to deliver services.",
+        "Novablack E-Tech Private Limited may use third-party service providers (hosting, email, analytics) to deliver services.",
         "These parties process data only on our instructions.",
-        "BVPL does not authorize third parties to use data for marketing. We recommend reviewing external privacy policies."
+        "Novablack E-Tech Private Limited does not authorize third parties to use data for marketing. We recommend reviewing external privacy policies."
       ]
     },
     {
       title: "Legal Compliance",
-      content: "BVPL may disclose personal data where required by law, regulation, or legal process, including for audit or regulatory purposes, while taking steps to protect client privacy."
+      content: "Novablack E-Tech Private Limited may disclose personal data where required by law, regulation, or legal process, including for audit or regulatory purposes, while taking steps to protect client privacy."
     },
     {
       title: "No Financial Data Collection",
-      content: "BVPL does not collect, store, process, or transmit sensitive financial information such as bank account details, card details, UPI IDs, wallet information, or payment credentials through its website."
+      content: "Novablack E-Tech Private Limited does not collect, store, process, or transmit sensitive financial information such as bank account details, card details, UPI IDs, wallet information, or payment credentials through its website."
     }
   ];
 
@@ -79,7 +79,7 @@ export default function PrivacyPolicy() {
 
           <div className="flex items-center gap-3 text-zinc-500">
             <span className="w-2 h-2 rounded-full bg-emerald-500/50 animate-pulse" />
-            <span className="text-sm tracking-wide">Last Revised: March 14, 2026</span>
+            <span className="text-sm tracking-wide">Last Revised: March 21, 2026</span>
           </div>
         </motion.div>
 

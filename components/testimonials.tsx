@@ -8,7 +8,7 @@ const testimonials = [
     fullCompany: "Growfast Commerce Pvt Ltd",
     author: "Rohit Anand",
     role: "Engineering Manager",
-    quote: "The internal tooling BVPL built for our ops team cut our manual reporting effort by half. Clean code, zero drama, delivered on time."
+    quote: "The internal tooling Novablack E-Tech Private Limited built for our ops team cut our manual reporting effort by half. Clean code, zero drama, delivered on time."
   },
   {
     id: "02",
@@ -32,7 +32,7 @@ const testimonials = [
     fullCompany: "PolicyX Insurance Brokers",
     author: "Swati Joshi",
     role: "Head of Technology",
-    quote: "Security compliance was our biggest blocker. BVPL handled the audit trail and data encryption requirements without us having to explain them twice."
+    quote: "Security compliance was our biggest blocker. Novablack E-Tech Private Limited handled the audit trail and data encryption requirements without us having to explain them twice."
   },
   {
     id: "05",
@@ -48,7 +48,7 @@ const testimonials = [
     fullCompany: "LearnVista EdTech",
     author: "Anjali Sharma",
     role: "Founder",
-    quote: "As a first-time founder, I needed a tech partner who could explain trade-offs clearly. BVPL did exactly that — and built something I'm proud to show investors."
+    quote: "As a first-time founder, I needed a tech partner who could explain trade-offs clearly. Novablack E-Tech Private Limited did exactly that — and built something I'm proud to show investors."
   },
 ];
 

@@ -95,7 +95,7 @@ export default function AboutDark() {
           <motion.div variants={slideRight} className="lg:col-span-9">
             <span className="inline-flex items-center gap-2 mb-8 px-3 py-1 bg-zinc-900 border border-zinc-800 rounded-full text-xs font-mono uppercase tracking-widest text-zinc-400">
               <div className="w-2 h-2 rounded-full bg-zinc-50 animate-pulse" />
-              Boby Ventures Pvt Ltd
+              Novablack E-Tech Private Limited
             </span>
             <h1 className="text-6xl md:text-8xl lg:text-[9rem] uppercase tracking-tighter leading-[0.85]">
               Engineer <br />
@@ -183,13 +183,13 @@ export default function AboutDark() {
         <div className="bg-zinc-900 border border-zinc-800 p-8 md:p-16 grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
           <motion.div variants={slideRight} className="md:col-span-8">
             <h3 className="text-3xl md:text-5xl font-medium leading-tight mb-8">
-              "We established BVPL to bring enterprise-grade reliability to the agile world. We operate not just as developers, but as growth partners committed to long-term digital maturity."
+              "We established Novablack E-Tech Private Limited to bring enterprise-grade reliability to the agile world. We operate not just as developers, but as growth partners committed to long-term digital maturity."
             </h3>
           </motion.div>
 
           <motion.div variants={slideRight} className="md:col-span-4 md:border-l md:border-zinc-800 md:pl-12 flex flex-col gap-6">
             <div>
-              <p className="text-2xl text-zinc-50">Boby Choudhary</p>
+              <p className="text-2xl text-zinc-50">XYZ</p>
               <p className="text-zinc-500 font-mono text-sm mt-1 uppercase">Founder</p>
             </div>
             <div className="flex gap-4 text-zinc-500">
