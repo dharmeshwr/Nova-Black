@@ -8,10 +8,12 @@ import {
   Megaphone,
 } from "@phosphor-icons/react";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 const services = [
   {
     id: "01",
+    slug: "web-mobile-apps",
     title: "Web & mobile apps",
     description: "Native and cross-platform applications built for ultimate performance, scalability, and seamless user experiences.",
     icon: DeviceMobile,
@@ -21,6 +23,7 @@ const services = [
   },
   {
     id: "02",
+    slug: "ux-product-design",
     title: "UX & product design",
     description: "Data-driven user interfaces and intuitive experiences that connect your brand with your audience on a deeper, functional level.",
     icon: PenNib,
@@ -30,6 +33,7 @@ const services = [
   },
   {
     id: "03",
+    slug: "product-development",
     title: "Product development",
     description: "From ideation to deployment, we engineer scalable platforms.",
     icon: Cube,
@@ -39,6 +43,7 @@ const services = [
   },
   {
     id: "04",
+    slug: "communication-design",
     title: "Communication design",
     description: "Crafting compelling brand narratives through visual storytelling.",
     icon: Megaphone,
@@ -48,6 +53,7 @@ const services = [
   },
   {
     id: "05",
+    slug: "award-class-web-design",
     title: "Award-class web design",
     description: "Visually stunning, high-performance websites that break the mold, tell your story, and leave a lasting impression.",
     icon: Trophy,
@@ -75,8 +81,9 @@ export default function ServicesBentoGrid() {
         {/* Bento Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 auto-rows-[250px] gap-4 md:gap-6">
           {services.map((service) => (
-            <div
+            <Link
               key={service.id}
+              href={`/services/${service.slug}`}
               className={cn(
                 "group relative overflow-hidden bg-zinc-900/50 border border-zinc-800/50 p-8 transition-all duration-500 hover:border-zinc-700 hover:shadow-2xl flex flex-col justify-between",
                 service.className
@@ -114,7 +121,7 @@ export default function ServicesBentoGrid() {
                 className="absolute -bottom-8 -right-8 text-zinc-800/20 w-48 h-48 group-hover:scale-110 group-hover:-rotate-12 transition-transform duration-700 ease-out z-0"
               />
 
-            </div>
+            </Link>
           ))}
         </div>
 

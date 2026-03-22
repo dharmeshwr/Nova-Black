@@ -1,7 +1,8 @@
 import Footer from "@/components/footer";
-import HeroSection from "@/components/hero-section";
+import HeroSectionClient from "@/components/hero-section-client";
 import IndustriesSection from "@/components/industries";
 import Navbar from "@/components/navbar";
+import ProjectRequestForm from "@/components/project-request-form";
 import Services from "@/components/services";
 import Testimonials from "@/components/testimonials";
 import Values from "@/components/values";
@@ -11,12 +12,13 @@ export default function Home() {
     <main>
       <div className="min-h-screen flex flex-col w-full">
         <Navbar />
-        <HeroSection />
+        <HeroSectionClient />
       </div>
       <Services />
       <Values />
       <IndustriesSection />
       <Testimonials />
+      <ProjectRequestForm />
       <Footer />
     </main>
   );

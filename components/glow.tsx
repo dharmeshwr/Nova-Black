@@ -119,7 +119,7 @@ const HorizonGlow = ({
 
         // Calculate Glow
         // We use u_intensity to determine the brightness/thickness
-        vec4 glow = u_intensity / abs(p.y + wave);
+        vec4 glow = u_intensity / (abs(p.y + wave) + 0.01);
 
         // Compress high values to avoid artifacts (tanh)
         vec3 glowColor = tanh(glow.rgb);

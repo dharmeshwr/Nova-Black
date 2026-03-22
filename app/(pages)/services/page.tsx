@@ -1,6 +1,8 @@
 "use client";
 
 import React from 'react';
+import ProjectRequestForm from '@/components/project-request-form';
+import Link from 'next/link';
 import {
   ArrowRightIcon,
   DeviceMobileIcon,
@@ -53,62 +55,72 @@ const fadeVariants: Variants = {
 };
 
 export default function ServicesDark() {
-  const services: { title: string; description: string; icon: Icon; subtext: string; isCompliance?: boolean; warningText?: string }[] = [
+  const services: { slug: string; title: string; description: string; icon: Icon; subtext: string; isCompliance?: boolean; warningText?: string }[] = [
     {
+      slug: "software-development",
       title: "Software Development",
       description: "End-to-end engineering of robust software ecosystems. We translate complex business requirements into high-performance, scalable custom solutions using modern agile methodologies.",
       icon: CodeIcon,
       subtext: "Full-cycle development from concept to deployment."
     },
     {
+      slug: "web-mobile-apps",
       title: "Web & Mobile App",
       description: "Cross-platform excellence using Flutter and React. We architect seamless user experiences that maintain consistency and performance across all devices and operating systems.",
       icon: DeviceMobileIcon,
       subtext: "Accelerated deployment with enterprise-grade architecture."
     },
     {
+      slug: "ecommerce-development",
       title: "E-Commerce Development",
       description: "Full-featured online stores built for conversion. We develop scalable e-commerce platforms with secure payment gateways, inventory management, and seamless shopping experiences tailored for your business.",
       icon: StorefrontIcon,
       subtext: "Starting at ₹25,000 — end-to-end store setup & launch."
     },
     {
+      slug: "business-consultancy",
       title: "Business Consultancy",
       description: "Strategic guidance to align your technology investments with business outcomes. We assess your current setup, identify growth opportunities, and deliver actionable roadmaps for digital transformation.",
       icon: HandshakeIcon,
       subtext: "Consultation fee ₹2,000 — one-on-one expert session."
     },
     {
+      slug: "cloud-devops",
       title: "Cloud & DevOps",
       description: "Cloud-native strategy on AWS and Azure. We focus on automated scaling, CI/CD pipelines, and cost-efficiency to ensure 99.9% uptime reliability for mission-critical apps.",
       icon: CloudIcon,
       subtext: "Reducing technical debt through optimized resource allocation."
     },
     {
+      slug: "systems-apis",
       title: "Systems & APIs",
       description: "Unify your technology stack with bespoke API orchestrations. We bridge disparate systems via REST, SOAP, and GraphQL to eliminate operational silos and optimize data flow.",
       icon: PlugsConnectedIcon,
       subtext: "Secure, high-throughput system orchestration.",
     },
     {
+      slug: "internal-tools",
       title: "Internal Tools",
       description: "Empower your team with custom dashboards and automated workflows. We utilize n8n, Zapier, and event-driven webhooks to reduce manual overhead and improve reporting accuracy.",
       icon: GitMergeIcon,
       subtext: "Custom BI dashboards and workflow optimization tools."
     },
     {
+      slug: "cybersecurity",
       title: "Cybersecurity",
       description: "Rigorous protection for your digital assets. We combine automated testing suites with zero-trust security principles to ensure resilience against threats and bugs.",
       icon: ShieldCheckIcon,
       subtext: "Full-spectrum load testing and vulnerability audits."
     },
     {
+      slug: "ux-product-design",
       title: "UI/UX Design",
       description: "Where aesthetics meet utility. Our design philosophy centers on intuitive navigation and visual storytelling that boosts engagement while maintaining a mobile-first perspective.",
       icon: BezierCurveIcon,
       subtext: "User-centric interfaces optimized for every screen."
     },
     {
+      slug: "it-architecture",
       title: "IT Architecture",
       description: "Building the backbone of modern business. We design scalable backend architectures and provide strategic roadmaps to support high-volume operations without compromising speed.",
       icon: BuildingsIcon,
@@ -144,17 +156,11 @@ export default function ServicesDark() {
 
       {/* 2. SERVICES LEDGER: Strict Grid, No Heavy Fonts */}
       <section className="border-b border-zinc-900">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-          variants={containerVariants}
-          className="flex flex-col"
-        >
+        <div className="flex flex-col">
           {services.map((service, index) => (
-            <motion.div
-              variants={rowVariants}
+            <a
               key={index}
+              href={`/services/${service.slug}`}
               className="group grid grid-cols-1 md:grid-cols-12 border-b border-zinc-900 last:border-none hover:bg-zinc-900/30 transition-colors duration-300"
             >
               {/* Meta Column */}
@@ -198,14 +204,21 @@ export default function ServicesDark() {
                         </p>
                       </div>
                     )}
+
+                    <span className="self-start flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-zinc-600 group-hover:text-zinc-400 transition-colors">
+                      View details
+                      <ArrowRightIcon size={12} className="group-hover:translate-x-1 transition-transform" />
+                    </span>
                   </div>
 
                 </div>
               </div>
-            </motion.div>
+            </a>
           ))}
-        </motion.div>
+        </div>
       </section>
+
+      <ProjectRequestForm />
 
       {/* 3. CTA: Brutalist Block */}
       <section className="px-6 md:px-12 py-32 bg-zinc-950">

@@ -173,3 +173,30 @@ body {
 /* ::selection { */
 /*   background: rgba(0, 0, 0, 0.1); */
 /* } */
+
+.form-input {
+  width: 100%;
+  background: #18181b;
+  border: 1px solid #27272a;
+  color: #e4e4e7;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  font-family: 'Graphik LCG', sans-serif;
+  font-weight: 300;
+  outline: none;
+  transition: border-color 0.2s;
+  appearance: none;
+}
+
+.form-input::placeholder {
+  color: #52525b;
+}
+
+.form-input:focus {
+  border-color: #71717a;
+}
+
+.form-input option {
+  background: #18181b;
+  color: #e4e4e7;
+}

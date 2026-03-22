@@ -1,5 +1,6 @@
 "use client";
 
+import ProjectRequestForm from '@/components/project-request-form';
 import {
   ArrowRightIcon,
   EnvelopeSimpleIcon,
@@ -203,6 +204,8 @@ export default function ContactDark() {
           </div>
         </div>
       </section>
+
+      <ProjectRequestForm />
 
     </div>
   );
