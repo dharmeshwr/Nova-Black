@@ -16,6 +16,8 @@ import {
   LinkedinLogoIcon,
   CodeIcon,
   WarningIcon,
+  HandshakeIcon,
+  StorefrontIcon,
   Icon
 } from '@phosphor-icons/react';
 import { Easing, motion, Variants } from 'motion/react';
@@ -65,6 +67,18 @@ export default function ServicesDark() {
       subtext: "Accelerated deployment with enterprise-grade architecture."
     },
     {
+      title: "E-Commerce Development",
+      description: "Full-featured online stores built for conversion. We develop scalable e-commerce platforms with secure payment gateways, inventory management, and seamless shopping experiences tailored for your business.",
+      icon: StorefrontIcon,
+      subtext: "Starting at ₹25,000 — end-to-end store setup & launch."
+    },
+    {
+      title: "Business Consultancy",
+      description: "Strategic guidance to align your technology investments with business outcomes. We assess your current setup, identify growth opportunities, and deliver actionable roadmaps for digital transformation.",
+      icon: HandshakeIcon,
+      subtext: "Consultation fee ₹2,000 — one-on-one expert session."
+    },
+    {
       title: "Cloud & DevOps",
       description: "Cloud-native strategy on AWS and Azure. We focus on automated scaling, CI/CD pipelines, and cost-efficiency to ensure 99.9% uptime reliability for mission-critical apps.",
       icon: CloudIcon,
@@ -99,7 +113,7 @@ export default function ServicesDark() {
       description: "Building the backbone of modern business. We design scalable backend architectures and provide strategic roadmaps to support high-volume operations without compromising speed.",
       icon: BuildingsIcon,
       subtext: "Securing data integrity across complex internal networks."
-    }
+    },
   ];
 
   return (

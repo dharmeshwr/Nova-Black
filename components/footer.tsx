@@ -24,14 +24,11 @@ export default function Footer() {
           <div className="lg:col-span-5 h-full pr-0 lg:pr-16">
             <div className="flex gap-2 items-center">
               <Image
-                src="/small_logo.png"
+                src="/full_logo.png"
                 alt="Logo"
-                width={80}
-                height={80}
+                width={130}
+                height={130}
               />
-              <div className="text-4xl font-medium tracking-tighter">
-                Nova Black
-              </div>
             </div>
             <motion.div variants={itemVariants} className="space-y-6  mt-5 ml-2 **:text-zinc-100/50">
               <div className="text-sm leading-relaxed text-neutral-800 space-y-1">
