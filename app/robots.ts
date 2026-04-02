@@ -1,13 +1,16 @@
-const site_url = process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000";
+import type { MetadataRoute } from "next";
 
-export default function robots() {
+const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000";
+
+export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
       {
         userAgent: "*",
         allow: "/",
+        disallow: ["/api/"],
       },
     ],
-    sitemap: `${site_url}/sitemap.xml`,
+    sitemap: `${siteUrl}/sitemap.xml`,
   };
 }
