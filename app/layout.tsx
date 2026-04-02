@@ -46,21 +46,12 @@ export const metadata: Metadata = {
     title: "NovaBlack E-Tech Private Limited | IT Solutions & Software Development",
     description:
       "Enterprise-grade software development, web & mobile apps, cloud & DevOps, cybersecurity, and IT consulting services from India.",
-    images: [
-      {
-        url: "/full_logo.png",
-        width: 1200,
-        height: 630,
-        alt: "NovaBlack E-Tech Private Limited",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "NovaBlack E-Tech Private Limited | IT Solutions & Software Development",
     description:
       "Enterprise-grade software development, web & mobile apps, cloud & DevOps, cybersecurity, and IT consulting services from India.",
-    images: ["/full_logo.png"],
   },
   alternates: {
     canonical: siteUrl,
