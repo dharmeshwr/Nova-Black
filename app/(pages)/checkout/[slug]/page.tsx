@@ -67,6 +67,13 @@ export default async function CheckoutPage({
   );
   const tax = Math.round(subtotal * checkoutPackage.taxRate);
   const total = subtotal + tax;
+  const serviceScopeItems = service.features.slice(0, 3);
+  const refundPolicyHighlights = [
+    "Work begins after the Statement of Work is mutually agreed.",
+    "Payments are non-refundable once project execution has commenced.",
+    "Scope revisions are available within 14 days of project initiation and stay within the agreed scope.",
+    "Cancellation requests are reviewed against the signed SOW and completed work.",
+  ];
 
   return (
     <main className="min-h-screen bg-zinc-950 text-zinc-50 font-sans selection:bg-zinc-800 selection:text-zinc-50 pt-32">
@@ -149,6 +156,30 @@ export default async function CheckoutPage({
                 </div>
               ))}
             </div>
+
+            <div className="p-6 md:p-8 border-t border-zinc-900 bg-zinc-950/60">
+              <span className="block text-xs font-mono uppercase tracking-widest text-zinc-500 mb-4">
+                Services provided
+              </span>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                {serviceScopeItems.map((item) => (
+                  <div key={item.title} className="border-l border-zinc-800 pl-4">
+                    <h3 className="text-sm font-medium text-zinc-200 mb-2">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm leading-relaxed text-zinc-500 font-light">
+                      {item.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+              <p className="mt-6 text-sm leading-relaxed text-zinc-500 font-light">
+                This checkout confirms the paid kickoff for {service.title}.
+                Final scope, milestones, access requirements, and delivery
+                responsibilities are confirmed in the project SOW before
+                execution starts.
+              </p>
+            </div>
           </div>
 
           <aside className="lg:col-span-5 lg:sticky lg:top-28 border border-zinc-900 bg-zinc-950">
@@ -203,7 +234,7 @@ export default async function CheckoutPage({
 
               <div className="mt-8">
                 <h3 className="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-4">
-                  Included handoff
+                  Service deliverables
                 </h3>
                 <ul className="space-y-3">
                   {service.deliverables.slice(0, 4).map((deliverable) => (
@@ -236,6 +267,33 @@ export default async function CheckoutPage({
                     </li>
                   ))}
                 </ul>
+              </div>
+
+              <div className="mt-8 border-t border-zinc-900 pt-6">
+                <h3 className="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-4">
+                  Cancellation & refund
+                </h3>
+                <ul className="space-y-3">
+                  {refundPolicyHighlights.map((policy) => (
+                    <li
+                      key={policy}
+                      className="flex items-start gap-3 text-sm leading-relaxed text-zinc-500 font-light"
+                    >
+                      <CheckCircleIcon
+                        size={15}
+                        weight="fill"
+                        className="text-zinc-700 shrink-0 mt-0.5"
+                      />
+                      <span>{policy}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  href="/refund-policy"
+                  className="mt-5 inline-flex text-xs font-mono uppercase tracking-widest text-zinc-300 border-b border-zinc-700 pb-1 hover:text-zinc-50 hover:border-zinc-300 transition-colors"
+                >
+                  Read full policy
+                </Link>
               </div>
             </div>
           </aside>
