@@ -525,7 +525,7 @@ export const servicesData: ServiceDetail[] = [
     description:
       "Full-featured e-commerce platforms with secure payment gateways, inventory management, and seamless shopping experiences tailored for your business.",
     category: "Engineering",
-    pricing: "Starting at ₹2,40,000 — end-to-end store setup & launch.",
+    pricing: "Starting at ₹24,000 — end-to-end store setup & launch.",
     features: [
       {
         title: "Custom Storefront",
@@ -606,7 +606,7 @@ export const servicesData: ServiceDetail[] = [
     description:
       "Strategic guidance aligning your technology investments with business outcomes. We assess your current setup, identify growth opportunities, and deliver actionable digital transformation roadmaps.",
     category: "Strategy",
-    pricing: "Consultation package ₹1,75,000 — strategy sprint and roadmap.",
+    pricing: "Consultation package ₹15,000 — strategy sprint and roadmap.",
     features: [
       {
         title: "Technology Audit",
@@ -1091,19 +1091,9 @@ export const serviceCheckoutPackages: Record<string, CheckoutPackage> = {
     taxRate: 0.18,
     lineItems: [
       {
-        label: "Product discovery",
-        description: "User flows, technical scope, and sprint plan.",
-        amount: 120000,
-      },
-      {
-        label: "Interface prototype",
-        description: "Core app screens and responsive interaction states.",
-        amount: 150000,
-      },
-      {
-        label: "Engineering setup",
-        description: "Repository, architecture baseline, and CI readiness.",
-        amount: 150000,
+        label: "App kickoff package",
+        description: "Product discovery, interface prototype, and engineering setup.",
+        amount: 25000,
       },
     ],
     notes: [
@@ -1119,19 +1109,9 @@ export const serviceCheckoutPackages: Record<string, CheckoutPackage> = {
     taxRate: 0.18,
     lineItems: [
       {
-        label: "Research and audit",
-        description: "Audience review, competitor scan, and heuristic notes.",
-        amount: 75000,
-      },
-      {
-        label: "Wireframes",
-        description: "Primary journeys and low-fidelity screen structure.",
-        amount: 75000,
-      },
-      {
-        label: "Visual prototype",
-        description: "High-fidelity UI direction for key screens.",
-        amount: 90000,
+        label: "Design sprint package",
+        description: "Research audit, wireframes, and visual prototype.",
+        amount: 18000,
       },
     ],
     notes: [
@@ -1147,19 +1127,9 @@ export const serviceCheckoutPackages: Record<string, CheckoutPackage> = {
     taxRate: 0.18,
     lineItems: [
       {
-        label: "Product strategy",
-        description: "MVP scope, roadmap, and success metrics.",
-        amount: 140000,
-      },
-      {
-        label: "Technical architecture",
-        description: "System blueprint, integrations, and delivery plan.",
-        amount: 160000,
-      },
-      {
-        label: "Sprint zero",
-        description: "Build setup, backlog grooming, and first sprint start.",
-        amount: 175000,
+        label: "MVP kickoff package",
+        description: "Product strategy, technical architecture, and sprint zero.",
+        amount: 25000,
       },
     ],
     notes: [
@@ -1175,19 +1145,9 @@ export const serviceCheckoutPackages: Record<string, CheckoutPackage> = {
     taxRate: 0.18,
     lineItems: [
       {
-        label: "Brand discovery",
-        description: "Positioning, audience, and visual direction workshop.",
-        amount: 60000,
-      },
-      {
-        label: "Identity assets",
-        description: "Logo direction, color, typography, and usage rules.",
-        amount: 80000,
-      },
-      {
-        label: "Marketing templates",
-        description: "Presentation and social templates for launch use.",
-        amount: 60000,
+        label: "Creative package",
+        description: "Brand discovery, identity assets, and marketing templates.",
+        amount: 16000,
       },
     ],
     notes: [
@@ -1203,19 +1163,9 @@ export const serviceCheckoutPackages: Record<string, CheckoutPackage> = {
     taxRate: 0.18,
     lineItems: [
       {
-        label: "Creative direction",
-        description: "Moodboard, art direction, and page experience plan.",
-        amount: 130000,
-      },
-      {
-        label: "Design prototype",
-        description: "Homepage and key conversion sections in high fidelity.",
-        amount: 170000,
-      },
-      {
-        label: "Frontend foundation",
-        description: "Next.js setup, motion baseline, and deployment plan.",
-        amount: 200000,
+        label: "Website kickoff package",
+        description: "Creative direction, design prototype, and frontend foundation.",
+        amount: 25000,
       },
     ],
     notes: [
@@ -1231,19 +1181,9 @@ export const serviceCheckoutPackages: Record<string, CheckoutPackage> = {
     taxRate: 0.18,
     lineItems: [
       {
-        label: "Requirements mapping",
-        description: "Business rules, workflows, and acceptance criteria.",
-        amount: 150000,
-      },
-      {
-        label: "System architecture",
-        description: "Data model, API contracts, and infrastructure plan.",
-        amount: 170000,
-      },
-      {
-        label: "Initial sprint",
-        description: "Repository setup, base modules, and delivery rhythm.",
-        amount: 180000,
+        label: "Engineering kickoff package",
+        description: "Requirements mapping, system architecture, and initial sprint setup.",
+        amount: 25000,
       },
     ],
     notes: [
@@ -1259,19 +1199,9 @@ export const serviceCheckoutPackages: Record<string, CheckoutPackage> = {
     taxRate: 0.18,
     lineItems: [
       {
-        label: "Storefront setup",
-        description: "Theme, catalog structure, and essential pages.",
-        amount: 90000,
-      },
-      {
-        label: "Payment and shipping",
-        description: "Gateway, shipping rules, and order flow testing.",
-        amount: 75000,
-      },
-      {
-        label: "Launch optimization",
-        description: "SEO basics, analytics, and mobile QA.",
-        amount: 75000,
+        label: "Store setup package",
+        description: "Storefront setup, payment and shipping, and launch optimization.",
+        amount: 24000,
       },
     ],
     notes: [
@@ -1287,14 +1217,9 @@ export const serviceCheckoutPackages: Record<string, CheckoutPackage> = {
     taxRate: 0.18,
     lineItems: [
       {
-        label: "Expert session",
-        description: "Focused strategy call with a senior consultant.",
-        amount: 100000,
-      },
-      {
-        label: "Action summary",
-        description: "Written next steps and recommended priorities.",
-        amount: 75000,
+        label: "Consultation package",
+        description: "Focused strategy session with a written action summary.",
+        amount: 15000,
       },
     ],
     notes: [
@@ -1310,19 +1235,9 @@ export const serviceCheckoutPackages: Record<string, CheckoutPackage> = {
     taxRate: 0.18,
     lineItems: [
       {
-        label: "Cloud audit",
-        description: "Spend, reliability, security, and deployment review.",
-        amount: 100000,
-      },
-      {
-        label: "Pipeline plan",
-        description: "CI/CD recommendations and environment strategy.",
-        amount: 100000,
-      },
-      {
-        label: "Reliability roadmap",
-        description: "Monitoring, backup, and scaling action plan.",
-        amount: 125000,
+        label: "Infrastructure audit package",
+        description: "Cloud audit, pipeline plan, and reliability roadmap.",
+        amount: 22000,
       },
     ],
     notes: [
@@ -1338,19 +1253,9 @@ export const serviceCheckoutPackages: Record<string, CheckoutPackage> = {
     taxRate: 0.18,
     lineItems: [
       {
-        label: "System mapping",
-        description: "Inventory of systems, data flows, and integration points.",
-        amount: 85000,
-      },
-      {
-        label: "API contract design",
-        description: "Endpoint structure, schemas, and error handling.",
-        amount: 90000,
-      },
-      {
-        label: "Integration plan",
-        description: "Security model, delivery stages, and test strategy.",
-        amount: 100000,
+        label: "Integration kickoff package",
+        description: "System mapping, API contract design, and integration plan.",
+        amount: 20000,
       },
     ],
     notes: [
@@ -1366,19 +1271,9 @@ export const serviceCheckoutPackages: Record<string, CheckoutPackage> = {
     taxRate: 0.18,
     lineItems: [
       {
-        label: "Workflow audit",
-        description: "Process mapping and automation opportunity review.",
-        amount: 70000,
-      },
-      {
-        label: "Dashboard prototype",
-        description: "Core UI structure for one priority workflow.",
-        amount: 85000,
-      },
-      {
-        label: "Automation plan",
-        description: "Integration, permissions, and rollout roadmap.",
-        amount: 70000,
+        label: "Tooling prototype package",
+        description: "Workflow audit, dashboard prototype, and automation plan.",
+        amount: 18000,
       },
     ],
     notes: [
@@ -1394,19 +1289,9 @@ export const serviceCheckoutPackages: Record<string, CheckoutPackage> = {
     taxRate: 0.18,
     lineItems: [
       {
-        label: "Threat modelling",
-        description: "Asset, user, and attack-surface review.",
-        amount: 90000,
-      },
-      {
-        label: "Vulnerability assessment",
-        description: "Automated scan plus manual verification.",
-        amount: 110000,
-      },
-      {
-        label: "Remediation roadmap",
-        description: "Prioritized findings, fixes, and re-test plan.",
-        amount: 100000,
+        label: "Security assessment package",
+        description: "Threat modelling, vulnerability assessment, and remediation roadmap.",
+        amount: 23000,
       },
     ],
     notes: [
@@ -1422,19 +1307,9 @@ export const serviceCheckoutPackages: Record<string, CheckoutPackage> = {
     taxRate: 0.18,
     lineItems: [
       {
-        label: "Current-state review",
-        description: "System inventory, constraints, and risk assessment.",
-        amount: 100000,
-      },
-      {
-        label: "Target architecture",
-        description: "Scalable blueprint with technology recommendations.",
-        amount: 125000,
-      },
-      {
-        label: "Migration roadmap",
-        description: "Sequenced modernization plan and governance notes.",
-        amount: 125000,
+        label: "Architecture review package",
+        description: "Current-state review, target architecture, and migration roadmap.",
+        amount: 21000,
       },
     ],
     notes: [

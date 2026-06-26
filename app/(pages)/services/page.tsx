@@ -75,14 +75,14 @@ export default function ServicesDark() {
       title: "E-Commerce Development",
       description: "Full-featured online stores built for conversion. We develop scalable e-commerce platforms with secure payment gateways, inventory management, and seamless shopping experiences tailored for your business.",
       icon: StorefrontIcon,
-      subtext: "Starting at ₹2,40,000 — end-to-end store setup & launch."
+      subtext: "Starting at ₹24,000 — end-to-end store setup & launch."
     },
     {
       slug: "business-consultancy",
       title: "Business Consultancy",
       description: "Strategic guidance to align your technology investments with business outcomes. We assess your current setup, identify growth opportunities, and deliver actionable roadmaps for digital transformation.",
       icon: HandshakeIcon,
-      subtext: "Consultation package ₹1,75,000 — strategy sprint and roadmap."
+      subtext: "Consultation package ₹15,000 — strategy sprint and roadmap."
     },
     {
       slug: "cloud-devops",
