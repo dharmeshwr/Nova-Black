@@ -21,6 +21,22 @@ export interface ServiceDetail {
   pricing?: string;
 }
 
+export interface CheckoutLineItem {
+  label: string;
+  description: string;
+  amount: number;
+}
+
+export interface CheckoutPackage {
+  headline: string;
+  duration: string;
+  depositLabel: string;
+  currency: "INR";
+  taxRate: number;
+  lineItems: CheckoutLineItem[];
+  notes: string[];
+}
+
 export const servicesData: ServiceDetail[] = [
   {
     slug: "web-mobile-apps",
@@ -509,7 +525,7 @@ export const servicesData: ServiceDetail[] = [
     description:
       "Full-featured e-commerce platforms with secure payment gateways, inventory management, and seamless shopping experiences tailored for your business.",
     category: "Engineering",
-    pricing: "Starting at ₹25,000 — end-to-end store setup & launch.",
+    pricing: "Starting at ₹2,40,000 — end-to-end store setup & launch.",
     features: [
       {
         title: "Custom Storefront",
@@ -590,7 +606,7 @@ export const servicesData: ServiceDetail[] = [
     description:
       "Strategic guidance aligning your technology investments with business outcomes. We assess your current setup, identify growth opportunities, and deliver actionable digital transformation roadmaps.",
     category: "Strategy",
-    pricing: "Consultation fee ₹2,000 — one-on-one expert session.",
+    pricing: "Consultation package ₹1,75,000 — strategy sprint and roadmap.",
     features: [
       {
         title: "Technology Audit",
@@ -1066,10 +1082,378 @@ export const servicesData: ServiceDetail[] = [
   },
 ];
 
+export const serviceCheckoutPackages: Record<string, CheckoutPackage> = {
+  "web-mobile-apps": {
+    headline: "Cross-platform app kickoff",
+    duration: "Discovery, UX architecture, and build sprint setup",
+    depositLabel: "Project kickoff deposit",
+    currency: "INR",
+    taxRate: 0.18,
+    lineItems: [
+      {
+        label: "Product discovery",
+        description: "User flows, technical scope, and sprint plan.",
+        amount: 120000,
+      },
+      {
+        label: "Interface prototype",
+        description: "Core app screens and responsive interaction states.",
+        amount: 150000,
+      },
+      {
+        label: "Engineering setup",
+        description: "Repository, architecture baseline, and CI readiness.",
+        amount: 150000,
+      },
+    ],
+    notes: [
+      "Final project quote is confirmed after discovery.",
+      "Deposit is adjusted against the full engagement invoice.",
+    ],
+  },
+  "ux-product-design": {
+    headline: "Product design sprint",
+    duration: "Research, IA, and high-fidelity prototype foundation",
+    depositLabel: "Design sprint deposit",
+    currency: "INR",
+    taxRate: 0.18,
+    lineItems: [
+      {
+        label: "Research and audit",
+        description: "Audience review, competitor scan, and heuristic notes.",
+        amount: 75000,
+      },
+      {
+        label: "Wireframes",
+        description: "Primary journeys and low-fidelity screen structure.",
+        amount: 75000,
+      },
+      {
+        label: "Visual prototype",
+        description: "High-fidelity UI direction for key screens.",
+        amount: 90000,
+      },
+    ],
+    notes: [
+      "Includes one focused revision cycle for the sprint output.",
+      "Extended design systems are scoped separately.",
+    ],
+  },
+  "product-development": {
+    headline: "MVP planning and build kickoff",
+    duration: "Strategy, architecture, and first delivery cycle",
+    depositLabel: "MVP kickoff deposit",
+    currency: "INR",
+    taxRate: 0.18,
+    lineItems: [
+      {
+        label: "Product strategy",
+        description: "MVP scope, roadmap, and success metrics.",
+        amount: 140000,
+      },
+      {
+        label: "Technical architecture",
+        description: "System blueprint, integrations, and delivery plan.",
+        amount: 160000,
+      },
+      {
+        label: "Sprint zero",
+        description: "Build setup, backlog grooming, and first sprint start.",
+        amount: 175000,
+      },
+    ],
+    notes: [
+      "Best for founders or teams ready to move from concept to build.",
+      "Deposit reserves discovery and first sprint capacity.",
+    ],
+  },
+  "communication-design": {
+    headline: "Brand communication package",
+    duration: "Identity direction and launch-ready communication assets",
+    depositLabel: "Creative package deposit",
+    currency: "INR",
+    taxRate: 0.18,
+    lineItems: [
+      {
+        label: "Brand discovery",
+        description: "Positioning, audience, and visual direction workshop.",
+        amount: 60000,
+      },
+      {
+        label: "Identity assets",
+        description: "Logo direction, color, typography, and usage rules.",
+        amount: 80000,
+      },
+      {
+        label: "Marketing templates",
+        description: "Presentation and social templates for launch use.",
+        amount: 60000,
+      },
+    ],
+    notes: [
+      "Source files are included after final payment clearance.",
+      "Print production costs are not included.",
+    ],
+  },
+  "award-class-web-design": {
+    headline: "Signature web experience kickoff",
+    duration: "Creative direction, prototype, and frontend build setup",
+    depositLabel: "Website kickoff deposit",
+    currency: "INR",
+    taxRate: 0.18,
+    lineItems: [
+      {
+        label: "Creative direction",
+        description: "Moodboard, art direction, and page experience plan.",
+        amount: 130000,
+      },
+      {
+        label: "Design prototype",
+        description: "Homepage and key conversion sections in high fidelity.",
+        amount: 170000,
+      },
+      {
+        label: "Frontend foundation",
+        description: "Next.js setup, motion baseline, and deployment plan.",
+        amount: 200000,
+      },
+    ],
+    notes: [
+      "Advanced 3D, WebGL, or CMS scope is estimated after discovery.",
+      "Deposit locks the creative and engineering kickoff window.",
+    ],
+  },
+  "software-development": {
+    headline: "Custom software build kickoff",
+    duration: "Discovery, architecture, and initial engineering sprint",
+    depositLabel: "Engineering kickoff deposit",
+    currency: "INR",
+    taxRate: 0.18,
+    lineItems: [
+      {
+        label: "Requirements mapping",
+        description: "Business rules, workflows, and acceptance criteria.",
+        amount: 150000,
+      },
+      {
+        label: "System architecture",
+        description: "Data model, API contracts, and infrastructure plan.",
+        amount: 170000,
+      },
+      {
+        label: "Initial sprint",
+        description: "Repository setup, base modules, and delivery rhythm.",
+        amount: 180000,
+      },
+    ],
+    notes: [
+      "Custom software is quoted after technical scoping.",
+      "Deposit is applied to the first milestone invoice.",
+    ],
+  },
+  "ecommerce-development": {
+    headline: "E-commerce store launch package",
+    duration: "Storefront setup, payment integration, and launch readiness",
+    depositLabel: "Store setup payment",
+    currency: "INR",
+    taxRate: 0.18,
+    lineItems: [
+      {
+        label: "Storefront setup",
+        description: "Theme, catalog structure, and essential pages.",
+        amount: 90000,
+      },
+      {
+        label: "Payment and shipping",
+        description: "Gateway, shipping rules, and order flow testing.",
+        amount: 75000,
+      },
+      {
+        label: "Launch optimization",
+        description: "SEO basics, analytics, and mobile QA.",
+        amount: 75000,
+      },
+    ],
+    notes: [
+      "Third-party platform subscriptions are billed directly by providers.",
+      "Product upload beyond the agreed catalog size is scoped separately.",
+    ],
+  },
+  "business-consultancy": {
+    headline: "One-on-one strategy consultation",
+    duration: "60-minute expert session with follow-up summary",
+    depositLabel: "Consultation fee",
+    currency: "INR",
+    taxRate: 0.18,
+    lineItems: [
+      {
+        label: "Expert session",
+        description: "Focused strategy call with a senior consultant.",
+        amount: 100000,
+      },
+      {
+        label: "Action summary",
+        description: "Written next steps and recommended priorities.",
+        amount: 75000,
+      },
+    ],
+    notes: [
+      "Scheduling is confirmed after payment.",
+      "The consultation fee is adjustable against a larger engagement.",
+    ],
+  },
+  "cloud-devops": {
+    headline: "Cloud and DevOps audit",
+    duration: "Infrastructure review, CI/CD plan, and reliability roadmap",
+    depositLabel: "Infrastructure audit deposit",
+    currency: "INR",
+    taxRate: 0.18,
+    lineItems: [
+      {
+        label: "Cloud audit",
+        description: "Spend, reliability, security, and deployment review.",
+        amount: 100000,
+      },
+      {
+        label: "Pipeline plan",
+        description: "CI/CD recommendations and environment strategy.",
+        amount: 100000,
+      },
+      {
+        label: "Reliability roadmap",
+        description: "Monitoring, backup, and scaling action plan.",
+        amount: 125000,
+      },
+    ],
+    notes: [
+      "Cloud provider costs are excluded.",
+      "Implementation can begin after audit sign-off.",
+    ],
+  },
+  "systems-apis": {
+    headline: "Systems integration kickoff",
+    duration: "API mapping, contract design, and integration plan",
+    depositLabel: "Integration kickoff deposit",
+    currency: "INR",
+    taxRate: 0.18,
+    lineItems: [
+      {
+        label: "System mapping",
+        description: "Inventory of systems, data flows, and integration points.",
+        amount: 85000,
+      },
+      {
+        label: "API contract design",
+        description: "Endpoint structure, schemas, and error handling.",
+        amount: 90000,
+      },
+      {
+        label: "Integration plan",
+        description: "Security model, delivery stages, and test strategy.",
+        amount: 100000,
+      },
+    ],
+    notes: [
+      "Third-party API fees are not included.",
+      "Legacy system access may affect timeline.",
+    ],
+  },
+  "internal-tools": {
+    headline: "Internal tool prototype",
+    duration: "Workflow audit, dashboard prototype, and automation plan",
+    depositLabel: "Tooling prototype deposit",
+    currency: "INR",
+    taxRate: 0.18,
+    lineItems: [
+      {
+        label: "Workflow audit",
+        description: "Process mapping and automation opportunity review.",
+        amount: 70000,
+      },
+      {
+        label: "Dashboard prototype",
+        description: "Core UI structure for one priority workflow.",
+        amount: 85000,
+      },
+      {
+        label: "Automation plan",
+        description: "Integration, permissions, and rollout roadmap.",
+        amount: 70000,
+      },
+    ],
+    notes: [
+      "No-code platform fees are billed separately.",
+      "Additional workflows can be added after prototype approval.",
+    ],
+  },
+  cybersecurity: {
+    headline: "Security assessment package",
+    duration: "Threat model, vulnerability scan, and remediation roadmap",
+    depositLabel: "Security assessment deposit",
+    currency: "INR",
+    taxRate: 0.18,
+    lineItems: [
+      {
+        label: "Threat modelling",
+        description: "Asset, user, and attack-surface review.",
+        amount: 90000,
+      },
+      {
+        label: "Vulnerability assessment",
+        description: "Automated scan plus manual verification.",
+        amount: 110000,
+      },
+      {
+        label: "Remediation roadmap",
+        description: "Prioritized findings, fixes, and re-test plan.",
+        amount: 100000,
+      },
+    ],
+    notes: [
+      "Full penetration testing requires a separately approved scope.",
+      "Production testing windows are coordinated before work begins.",
+    ],
+  },
+  "it-architecture": {
+    headline: "Architecture review package",
+    duration: "Current-state review, target blueprint, and migration roadmap",
+    depositLabel: "Architecture review deposit",
+    currency: "INR",
+    taxRate: 0.18,
+    lineItems: [
+      {
+        label: "Current-state review",
+        description: "System inventory, constraints, and risk assessment.",
+        amount: 100000,
+      },
+      {
+        label: "Target architecture",
+        description: "Scalable blueprint with technology recommendations.",
+        amount: 125000,
+      },
+      {
+        label: "Migration roadmap",
+        description: "Sequenced modernization plan and governance notes.",
+        amount: 125000,
+      },
+    ],
+    notes: [
+      "Implementation is scoped after the review package.",
+      "Workshops can be remote or onsite by arrangement.",
+    ],
+  },
+};
+
 export function getServiceBySlug(slug: string): ServiceDetail | undefined {
   return servicesData.find((s) => s.slug === slug);
 }
 
 export function getAllSlugs(): string[] {
   return servicesData.map((s) => s.slug);
+}
+
+export function getServiceCheckoutPackage(
+  slug: string
+): CheckoutPackage | undefined {
+  return serviceCheckoutPackages[slug];
 }

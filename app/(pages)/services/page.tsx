@@ -75,14 +75,14 @@ export default function ServicesDark() {
       title: "E-Commerce Development",
       description: "Full-featured online stores built for conversion. We develop scalable e-commerce platforms with secure payment gateways, inventory management, and seamless shopping experiences tailored for your business.",
       icon: StorefrontIcon,
-      subtext: "Starting at ₹25,000 — end-to-end store setup & launch."
+      subtext: "Starting at ₹2,40,000 — end-to-end store setup & launch."
     },
     {
       slug: "business-consultancy",
       title: "Business Consultancy",
       description: "Strategic guidance to align your technology investments with business outcomes. We assess your current setup, identify growth opportunities, and deliver actionable roadmaps for digital transformation.",
       icon: HandshakeIcon,
-      subtext: "Consultation fee ₹2,000 — one-on-one expert session."
+      subtext: "Consultation package ₹1,75,000 — strategy sprint and roadmap."
     },
     {
       slug: "cloud-devops",
@@ -130,8 +130,6 @@ export default function ServicesDark() {
 
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-50 font-sans selection:bg-zinc-800 selection:text-zinc-50">
-
-      {/* 1. HERO: Stark, Asymmetrical, Thin Typography */}
       <section className="pt-32 pb-16 px-6 md:px-12 border-b border-zinc-900">
         <motion.div
           initial="hidden"
@@ -158,9 +156,8 @@ export default function ServicesDark() {
       <section className="border-b border-zinc-900">
         <div className="flex flex-col">
           {services.map((service, index) => (
-            <a
+            <article
               key={index}
-              href={`/services/${service.slug}`}
               className="group grid grid-cols-1 md:grid-cols-12 border-b border-zinc-900 last:border-none hover:bg-zinc-900/30 transition-colors duration-300"
             >
               {/* Meta Column */}
@@ -180,9 +177,11 @@ export default function ServicesDark() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
 
                   <div>
-                    <h3 className="text-3xl md:text-4xl font-light tracking-tight mb-6 group-hover:text-white transition-colors">
-                      {service.title}
-                    </h3>
+                    <Link href={`/services/${service.slug}`}>
+                      <h3 className="text-3xl md:text-4xl font-light tracking-tight mb-6 group-hover:text-white transition-colors">
+                        {service.title}
+                      </h3>
+                    </Link>
                     {service.subtext && (
                       <span className="inline-block px-3 py-1 border border-zinc-800 text-xs font-mono text-zinc-500 uppercase tracking-wider">
                         {service.subtext}
@@ -205,15 +204,27 @@ export default function ServicesDark() {
                       </div>
                     )}
 
-                    <span className="self-start flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-zinc-600 group-hover:text-zinc-400 transition-colors">
-                      View details
-                      <ArrowRightIcon size={12} className="group-hover:translate-x-1 transition-transform" />
-                    </span>
+                    <div className="flex flex-wrap gap-4">
+                      <Link
+                        href={`/services/${service.slug}`}
+                        className="self-start flex items-center gap-2 border border-zinc-700 px-4 py-2 text-xs font-mono uppercase tracking-widest text-zinc-300 hover:bg-zinc-50 hover:text-zinc-950 transition-all duration-300"
+                      >
+                        View details
+                        <ArrowRightIcon size={12} className="group-hover:translate-x-1 transition-transform" />
+                      </Link>
+                      <Link
+                        href={`/checkout/${service.slug}`}
+                        className="self-start flex items-center gap-2 border border-zinc-700 px-4 py-2 text-xs font-mono uppercase tracking-widest text-zinc-300 hover:bg-zinc-50 hover:text-zinc-950 transition-all duration-300"
+                      >
+                        Checkout
+                        <ArrowRightIcon size={12} />
+                      </Link>
+                    </div>
                   </div>
 
                 </div>
               </div>
-            </a>
+            </article>
           ))}
         </div>
       </section>

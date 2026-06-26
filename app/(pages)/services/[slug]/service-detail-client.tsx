@@ -76,6 +76,16 @@ export default function ServiceDetailClient({ service }: { service: ServiceDetai
                 {service.pricing}
               </span>
             )}
+            <Link
+              href={`/checkout/${service.slug}`}
+              className="group mt-6 flex w-fit items-center gap-3 border border-zinc-700 px-5 py-3 text-xs font-mono uppercase tracking-widest text-zinc-200 hover:bg-zinc-50 hover:text-zinc-950 transition-all duration-300"
+            >
+              Checkout service
+              <ArrowRightIcon
+                size={14}
+                className="group-hover:translate-x-1 transition-transform"
+              />
+            </Link>
           </motion.div>
         </motion.div>
       </section>
@@ -207,6 +217,19 @@ export default function ServiceDetailClient({ service }: { service: ServiceDetai
                   </span>
                 </motion.li>
               ))}
+              <motion.li variants={fadeUp} className="pt-8">
+                <Link
+                  href={`/checkout/${service.slug}`}
+                  className="group inline-flex items-center gap-4 border border-zinc-700 px-8 py-4 text-sm font-medium uppercase tracking-widest text-zinc-200 hover:bg-zinc-50 hover:text-zinc-950 transition-all duration-300"
+                >
+                  Continue to checkout
+                  <ArrowRightIcon
+                    size={16}
+                    weight="light"
+                    className="group-hover:translate-x-1 transition-transform"
+                  />
+                </Link>
+              </motion.li>
             </motion.ul>
           </motion.div>
         </div>
