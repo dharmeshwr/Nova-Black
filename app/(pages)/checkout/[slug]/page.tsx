@@ -220,8 +220,8 @@ export default async function CheckoutPage({
             </div>
 
             <div className="p-6 md:p-8">
-              <Link
-                href="/"
+              <button
+                type="button"
                 className="group w-full flex items-center justify-between border border-zinc-700 bg-zinc-50 text-zinc-950 px-6 py-4 text-sm font-medium uppercase tracking-widest hover:bg-zinc-950 hover:text-zinc-50 transition-all duration-300"
               >
                 Pay now
@@ -230,7 +230,7 @@ export default async function CheckoutPage({
                   weight="light"
                   className="group-hover:translate-x-1 transition-transform"
                 />
-              </Link>
+              </button>
 
               <div className="mt-8">
                 <h3 className="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-4">
