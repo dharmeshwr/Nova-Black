@@ -3,7 +3,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
   ArrowLeftIcon,
-  ArrowRightIcon,
   CheckCircleIcon,
   ShieldCheckIcon,
 } from "@phosphor-icons/react/dist/ssr";
@@ -12,6 +11,7 @@ import {
   getServiceBySlug,
   getServiceCheckoutPackage,
 } from "@/lib/services-data";
+import { CheckoutPaymentForm } from "./payment-form";
 
 function formatCurrency(amount: number) {
   return new Intl.NumberFormat("en-IN", {
@@ -220,17 +220,7 @@ export default async function CheckoutPage({
             </div>
 
             <div className="p-6 md:p-8">
-              <button
-                type="button"
-                className="group w-full flex items-center justify-between border border-zinc-700 bg-zinc-50 text-zinc-950 px-6 py-4 text-sm font-medium uppercase tracking-widest hover:bg-zinc-950 hover:text-zinc-50 transition-all duration-300"
-              >
-                Pay now
-                <ArrowRightIcon
-                  size={16}
-                  weight="light"
-                  className="group-hover:translate-x-1 transition-transform"
-                />
-              </button>
+              <CheckoutPaymentForm slug={service.slug} />
 
               <div className="mt-8">
                 <h3 className="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-4">
